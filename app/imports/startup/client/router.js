@@ -25,12 +25,42 @@ function removeDirectoryBodyClass() {
 
 export const directoryPageRouteName = 'Directory_Page';
 FlowRouter.route('/directory', {
-  name: directoryPageRouteName,
-  action() {
-    BlazeLayout.render('Directory_Layout', { main: directoryPageRouteName });
-  },
-  triggersEnter: [addDirectoryBodyClass],
-  triggersExit: [removeDirectoryBodyClass],
+    name: directoryPageRouteName,
+    action() {
+        BlazeLayout.render('Directory_Layout', { main: directoryPageRouteName });
+    },
+    triggersEnter: [addDirectoryBodyClass],
+    triggersExit: [removeDirectoryBodyClass],
+});
+
+export const listingsPageRouteName = 'Listings_Page';
+FlowRouter.route('/listings', {
+    name: directoryPageRouteName,
+    action() {
+        BlazeLayout.render('Listings_Page', { main: directoryPageRouteName });
+    },
+    triggersEnter: [addDirectoryBodyClass],
+    triggersExit: [removeDirectoryBodyClass],
+});
+
+export const myListingsPageRouteName = 'MyListings_Page';
+FlowRouter.route('/mylistings', {
+    name: directoryPageRouteName,
+    action() {
+        BlazeLayout.render('MyListings_Page', { main: directoryPageRouteName });
+    },
+    triggersEnter: [addDirectoryBodyClass],
+    triggersExit: [removeDirectoryBodyClass],
+});
+
+export const editPageRouteName = 'Edit_Page';
+FlowRouter.route('/edit', {
+    name: directoryPageRouteName,
+    action() {
+        BlazeLayout.render('Edit_Page', { main: directoryPageRouteName });
+    },
+    triggersEnter: [addDirectoryBodyClass],
+    triggersExit: [removeDirectoryBodyClass],
 });
 
 

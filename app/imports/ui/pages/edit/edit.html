@@ -1,86 +1,135 @@
 <template name="Edit_Page">
 
   <!--<div class="landing-section-1">-->
-    <!--<div class="ui grid">-->
+  <!--<div class="ui grid">-->
 
-      <!--<div class="row">-->
-        <!--<div class="ui right aligned sixteen wide column">-->
-          <!--{{> Cas_Login }}-->
-        <!--</div>-->
+  <!--<div class="row">-->
+  <!--<div class="ui right aligned sixteen wide column">-->
+  <!--{{> Cas_Login }}-->
+  <!--</div>-->
 
-      <!--</div>-->
-      <!--<div class="row">-->
-        <!--<div class="ui center aligned sixteen wide column">-->
-          <!--<h1 class="landing-section-1-welcome">Welcome to BowFolios</h1>-->
-          <!--<h3 class="landing-section-1-tagline">Professional portfolios and networking for the University of Hawaii community</h3>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="row">-->
+  <!--<div class="ui center aligned sixteen wide column">-->
+  <!--<h1 class="landing-section-1-welcome">Welcome to BowFolios</h1>-->
+  <!--<h3 class="landing-section-1-tagline">Professional portfolios and networking for the University of Hawaii community</h3>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
   <!--</div>-->
 
   <!--<div class="landing-section-2">-->
-    <!--<div class="ui grid">-->
-      <!--<div class="ui eight wide column">-->
-        <!--<img class="ui centered medium image" src="/images/profile.png">-->
-      <!--</div>-->
-      <!--<div class="ui eight wide middle aligned column">-->
-        <!--<h1 class="landing-section-header">Create your portfolio.</h1>-->
-        <!--<h1 class="landing-section-header">Specify your interests.</h1>-->
-      <!--</div>-->
-    <!--</div>-->
+  <!--<div class="ui grid">-->
+  <!--<div class="ui eight wide column">-->
+  <!--<img class="ui centered medium image" src="/images/profile.png">-->
+  <!--</div>-->
+  <!--<div class="ui eight wide middle aligned column">-->
+  <!--<h1 class="landing-section-header">Create your portfolio.</h1>-->
+  <!--<h1 class="landing-section-header">Specify your interests.</h1>-->
+  <!--</div>-->
+  <!--</div>-->
   <!--</div>-->
 
   <!--<div class="landing-section-3">-->
-    <!--<div class="ui grid">-->
-      <!--<div class="ui eight wide middle aligned column">-->
-        <!--<h1 class="landing-section-header">Publish your portfolio in the BowFolio directory.</h1>-->
-      <!--</div>-->
-      <!--<div class="ui eight wide column">-->
-        <!--<img class="ui centered medium image" src="/images/directory.png">-->
-      <!--</div>-->
-    <!--</div>-->
+  <!--<div class="ui grid">-->
+  <!--<div class="ui eight wide middle aligned column">-->
+  <!--<h1 class="landing-section-header">Publish your portfolio in the BowFolio directory.</h1>-->
+  <!--</div>-->
+  <!--<div class="ui eight wide column">-->
+  <!--<img class="ui centered medium image" src="/images/directory.png">-->
+  <!--</div>-->
+  <!--</div>-->
   <!--</div>-->
 
   <!--<div class="landing-section-2">-->
-    <!--<div class="ui grid">-->
-      <!--<div class="ui eight wide column">-->
-        <!--<img class="ui centered medium image" src="/images/filter.png">-->
-      <!--</div>-->
-      <!--<div class="ui eight wide middle aligned column">-->
-        <!--<h1 class="landing-section-header">Find UH community members with similar interests.</h1>-->
-      <!--</div>-->
-    <!--</div>-->
+  <!--<div class="ui grid">-->
+  <!--<div class="ui eight wide column">-->
+  <!--<img class="ui centered medium image" src="/images/filter.png">-->
+  <!--</div>-->
+  <!--<div class="ui eight wide middle aligned column">-->
+  <!--<h1 class="landing-section-header">Find UH community members with similar interests.</h1>-->
+  <!--</div>-->
+  <!--</div>-->
   <!--</div>-->
 
   <!--<div class="landing-section-5">-->
-    <!--<div class="ui grid">-->
-      <!--<div class="ui center aligned sixteen wide column">-->
-        <!--{{> Cas_Login size="large"}}-->
-      <!--</div>-->
-    <!--</div>-->
+  <!--<div class="ui grid">-->
+  <!--<div class="ui center aligned sixteen wide column">-->
+  <!--{{> Cas_Login size="large"}}-->
+  <!--</div>-->
+  <!--</div>-->
   <!--</div>-->
 
   <div class="ui three column centered grid container">
     <div class="column">
-      <h1>Dave Walton</h1>
-      <img class="ui small centered circular image" src="/images/stock-face.jpeg"/>
-      <p>Hi my name is Dave and I recently moved to Hawaii from Ohio to go to school at UH. I have a pretty nice Buick and I have never killed anyone. Hopefully we can carpool together and save some gas money. Go Bows!</p>
+      <div class="ui input">
+        <input placeholder="Name..." type="text">
+      </div>
+      <img class="ui small centered circular image" src="/images/blank-face.jpg"/>
+      <button class="ui button">upload image</button>
+      <div class="ui fluid input">
+        <input placeholder="A little about yourself..." type="text">
+      </div>
     </div>
 
     <div class="column">
       <h3>Location</h3>
-      <div class="ui text">Kaneohe</div>
+      <div class="ui search selection dropdown">
+        <input name="location" type="hidden">
+        <i class="dropdown icon"></i>
+        <div class="default text">Select Location</div>
+        <div class="menu">
+          <div class="item" data-value="0">Aiea</div>
+          <div class="item" data-value="1">Ewa Beach</div>
+          <div class="item" data-value="2">Hale'iwa</div>
+          <div class="item" data-value="3">Hau'ula</div>
+          <div class="item" data-value="4">Hawaii Kai</div>
+          <div class="item" data-value="5">Honolulu</div>
+          <div class="item" data-value="6">Ka'a'awa</div>
+          <div class="item" data-value="7">Kahala</div>
+          <div class="item" data-value="8">Kahuku</div>
+          <div class="item" data-value="9">Kailua</div>
+          <div class="item" data-value="10">Kane'ohe</div>
+          <div class="item" data-value="11">Kapolei</div>
+        </div>
+      </div>
       <h3>Vehicle</h3>
-      <div class="ui text">4 door Buick Regal</div>
+      <div class="ui input">
+        <input placeholder="Vehicle..." type="text">
+      </div>
       <h3>Capacity</h3>
-      <div class="ui text">2</div>
-      <a href="#">View user's listings</a>
+      <div class="ui selection dropdown">
+        <input name="capacity" type="hidden">
+        <i class="dropdown icon"></i>
+        <div class="default text">Capacity</div>
+        <div class="menu">
+          <div class="item" data-value="0">1</div>
+          <div class="item" data-value="1">2</div>
+          <div class="item" data-value="2">3</div>
+          <div class="item" data-value="3">4</div>
+          <div class="item" data-value="4">5</div>
+          <div class="item" data-value="5">6</div>
+          <div class="item" data-value="6">7</div>
+          <div class="item" data-value="7">8</div>
+          <div class="item" data-value="8">9</div>
+          <div class="item" data-value="9">10</div>
+        </div>
+      </div>
+      <div style="padding-top: 2em;">
+        <a href="#">Create or update your listings</a>
+      </div>
     </div>
 
     <div class="column">
 
-      <img class="ui image" src="/images/davesBuickRegal.jpeg"/>
+      <img class="ui image" src="/images/car-icon.png"/>
+      <button class="ui button">upload image</button>
     </div>
   </div>
 
+  <script>
+    $('.ui.selection.dropdown')
+        .dropdown()
+    ;
+  </script>
 </template>

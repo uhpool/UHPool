@@ -83,7 +83,7 @@ export const editPageRouteName = 'Edit_Page';
 userRoutes.route('/edit', {
   name: editPageRouteName,
   action() {
-    BlazeLayout.render('Edit_Page', { main: editPageRouteName });
+    BlazeLayout.render('User_Layout', { main: editPageRouteName });
   },
 });
 

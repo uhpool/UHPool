@@ -53,17 +53,6 @@ FlowRouter.route('/mylistings', {
     triggersExit: [removeDirectoryBodyClass],
 });
 
-export const editPageRouteName = 'Edit_Page';
-FlowRouter.route('/edit', {
-    name: directoryPageRouteName,
-    action() {
-        BlazeLayout.render('Edit_Page', { main: directoryPageRouteName });
-    },
-    triggersEnter: [addDirectoryBodyClass],
-    triggersExit: [removeDirectoryBodyClass],
-});
-
-
 /*                        USER ROUTES                      */
 
 
@@ -89,6 +78,15 @@ userRoutes.route('/profile', {
     BlazeLayout.render('User_Layout', { main: profilePageRouteName });
   },
 });
+
+export const editPageRouteName = 'Edit_Page';
+userRoutes.route('/edit', {
+  name: editPageRouteName,
+  action() {
+    BlazeLayout.render('Edit_Page', { main: editPageRouteName });
+  },
+});
+
 
 export const filterPageRouteName = 'Filter_Page';
 userRoutes.route('/filter', {

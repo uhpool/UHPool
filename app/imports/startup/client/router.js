@@ -33,14 +33,6 @@ FlowRouter.route('/directory', {
     triggersExit: [removeDirectoryBodyClass],
 });
 
-export const listingsPageRouteName = 'Listings_Page';
-FlowRouter.route('/listings', {
-    name: listingsPageRouteName,
-    action() {
-        BlazeLayout.render('Listings_Page', { main: listingsPageRouteName });
-    },
-});
-
 /*                        USER ROUTES                      */
 
 
@@ -89,6 +81,14 @@ userRoutes.route('/mylistings', {
     name: myListingsPageRouteName,
     action() {
         BlazeLayout.render('User_Layout', { main: myListingsPageRouteName });
+    },
+});
+
+export const listingsPageRouteName = 'Listings_Page';
+userRoutes.route('/listings', {
+    name: listingsPageRouteName,
+    action() {
+        BlazeLayout.render('User_Layout', { main: listingsPageRouteName });
     },
 });
 

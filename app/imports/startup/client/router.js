@@ -25,14 +25,21 @@ function removeDirectoryBodyClass() {
 
 export const directoryPageRouteName = 'Directory_Page';
 FlowRouter.route('/directory', {
-  name: directoryPageRouteName,
-  action() {
-    BlazeLayout.render('Directory_Layout', { main: directoryPageRouteName });
-  },
-  triggersEnter: [addDirectoryBodyClass],
-  triggersExit: [removeDirectoryBodyClass],
+    name: directoryPageRouteName,
+    action() {
+        BlazeLayout.render('Directory_Layout', { main: directoryPageRouteName });
+    },
+    triggersEnter: [addDirectoryBodyClass],
+    triggersExit: [removeDirectoryBodyClass],
 });
 
+export const listingsPageRouteName = 'Listings_Page';
+FlowRouter.route('/listings', {
+    name: listingsPageRouteName,
+    action() {
+        BlazeLayout.render('Listings_Page', { main: listingsPageRouteName });
+    },
+});
 
 /*                        USER ROUTES                      */
 
@@ -60,12 +67,29 @@ userRoutes.route('/profile', {
   },
 });
 
+export const editPageRouteName = 'Edit_Page';
+userRoutes.route('/edit', {
+  name: editPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: editPageRouteName });
+  },
+});
+
+
 export const filterPageRouteName = 'Filter_Page';
 userRoutes.route('/filter', {
   name: filterPageRouteName,
   action() {
     BlazeLayout.render('User_Layout', { main: filterPageRouteName });
   },
+});
+
+export const myListingsPageRouteName = 'MyListings_Page';
+userRoutes.route('/mylistings', {
+    name: myListingsPageRouteName,
+    action() {
+        BlazeLayout.render('User_Layout', { main: myListingsPageRouteName });
+    },
 });
 
 /*                        MISC ROUTES                       */

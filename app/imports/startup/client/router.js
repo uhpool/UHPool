@@ -35,22 +35,10 @@ FlowRouter.route('/directory', {
 
 export const listingsPageRouteName = 'Listings_Page';
 FlowRouter.route('/listings', {
-    name: directoryPageRouteName,
+    name: listingsPageRouteName,
     action() {
-        BlazeLayout.render('Listings_Page', { main: directoryPageRouteName });
+        BlazeLayout.render('Listings_Page', { main: listingsPageRouteName });
     },
-    triggersEnter: [addDirectoryBodyClass],
-    triggersExit: [removeDirectoryBodyClass],
-});
-
-export const myListingsPageRouteName = 'MyListings_Page';
-FlowRouter.route('/mylistings', {
-    name: directoryPageRouteName,
-    action() {
-        BlazeLayout.render('MyListings_Page', { main: directoryPageRouteName });
-    },
-    triggersEnter: [addDirectoryBodyClass],
-    triggersExit: [removeDirectoryBodyClass],
 });
 
 /*                        USER ROUTES                      */
@@ -94,6 +82,14 @@ userRoutes.route('/filter', {
   action() {
     BlazeLayout.render('User_Layout', { main: filterPageRouteName });
   },
+});
+
+export const myListingsPageRouteName = 'MyListings_Page';
+userRoutes.route('/mylistings', {
+    name: myListingsPageRouteName,
+    action() {
+        BlazeLayout.render('User_Layout', { main: myListingsPageRouteName });
+    },
 });
 
 /*                        MISC ROUTES                       */

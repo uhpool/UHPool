@@ -1,0 +1,7 @@
+{
+  "galaxy.meteor.com": {
+     "env": {
+       "MONGO_URL": "mongodb://uhpool:fEHy%64#$ss1@ds159220.mlab.com:59220/uhpool"
+     }
+   }
+}

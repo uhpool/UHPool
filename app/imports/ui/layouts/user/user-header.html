@@ -3,7 +3,9 @@
     <div class="ui container">
       <div class="item"><h1>UH Pool</h1></div>
       <a class="{{isActiveRoute "Profile_Page"}} item" href="{{pathFor "Profile_Page" username=routeUserName}}">Profile</a>
-      <a class="{{isActiveRoute "Filter_Page"}} item" href="{{pathFor "Filter_Page" username=routeUserName}}">Filter</a>
+      <a class="{{isActiveRoute "Edit_Page"}} item" href="{{pathFor "Edit_Page" username=routeUserName}}">Edit Profile</a>
+      <a class="{{isActiveRoute "Listings_Page"}} item" href="{{pathFor "Listings_Page" username=routeUserName}}">Listings</a>
+      <a class="{{isActiveRoute "MyListings_Page"}} item" href="{{pathFor "MyListings_Page" username=routeUserName}}">My Listings</a>
       <div class="right aligned item">{{> Cas_Login }}</div>
     </div>
   </div>

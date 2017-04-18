@@ -14,10 +14,10 @@ if (Meteor.isServer) {
     const username = 'dwalton';
     const bio = 'My Buick is from 1990.';
     const picture = 'http://weknowyourdreams.com/images/face/face-03.jpg';
-    const location = "Kailua";
-    const vehicle = "Buick";
+    const location = 'Kailua';
+    const vehicle = 'Buick';
     const capacity = 2;
-    const vehiclePicture = http://1.bp.blogspot.com/-M2dpTAqyRZU/TpBMhqL9B1I/AAAAAAAAAWM/LI7JR_c9r50/s1600/car+spy+photos+6.jpg;
+    const vehiclePicture = 'http://1.bp.blogspot.com/-M2dpTAqyRZU/TpBMhqL9B1I/AAAAAAAAAWM/LI7JR_c9r50/s1600/car+spy+photos+6.jpg';
     const defineObject = { firstName, lastName, username, bio, picture, location, vehicle, capacity, vehiclePicture };
 
     before(function setup() {

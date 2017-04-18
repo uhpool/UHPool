@@ -18,14 +18,14 @@ class ProfileCollection extends BaseCollection {
   constructor() {
     super('Profile', new SimpleSchema({
       username: { type: String, optional: false },
-      firstName: { type: String, optional: false },
-      lastName: { type: String, optional: false },
+      firstName: { type: String, optional: true },
+      lastName: { type: String, optional: true },
       bio: { type: String, optional: true },
-      picture: { type: SimpleSchema.RegEx.Url, optional: false },
-      location: { type: String, optional: false },
-      vehicle: { type: String, optional: false },
-      capacity: { type: Number, optional: false },
-      vehiclePicture: { type: SimpleSchema.RegEx.Url, optional: false },
+      picture: { type: SimpleSchema.RegEx.Url, optional: true },
+      location: { type: String, optional: true },
+      vehicle: { type: String, optional: true },
+      capacity: { type: Number, optional: true },
+      vehiclePicture: { type: SimpleSchema.RegEx.Url, optional: true },
     }));
   }
 
@@ -63,7 +63,6 @@ class ProfileCollection extends BaseCollection {
     }
 
     // Throw an error if any of the passed Interest names are not defined.
-    Interests.assertNames(interests);
     return this._collection.insert({
       firstName, lastName, username, bio, picture, location, vehicle,
       capacity, vehiclePicture

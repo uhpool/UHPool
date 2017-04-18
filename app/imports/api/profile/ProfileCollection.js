@@ -17,47 +17,46 @@ class ProfileCollection extends BaseCollection {
    */
   constructor() {
     super('Profile', new SimpleSchema({
-      username: { type: String },
-      // Remainder are optional
-      firstName: { type: String, optional: true },
-      lastName: { type: String, optional: true },
+      username: { type: String, optional: false },
+      firstName: { type: String, optional: false },
+      lastName: { type: String, optional: false },
       bio: { type: String, optional: true },
-      interests: { type: [String], optional: true },
-      title: { type: String, optional: true },
-      picture: { type: SimpleSchema.RegEx.Url, optional: true },
-      github: { type: SimpleSchema.RegEx.Url, optional: true },
-      facebook: { type: SimpleSchema.RegEx.Url, optional: true },
-      instagram: { type: SimpleSchema.RegEx.Url, optional: true },
+      picture: { type: SimpleSchema.RegEx.Url, optional: false },
+      location: { type: String, optional: false },
+      vehicle: { type: String, optional: false },
+      capacity: { type: Number, optional: false },
+      vehiclePicture: { type: SimpleSchema.RegEx.Url, optional: false },
     }));
   }
 
   /**
    * Defines a new Profile.
    * @example
-   * Profiles.define({ firstName: 'Philip',
-   *                   lastName: 'Johnson',
-   *                   username: 'johnson',
-   *                   bio: 'I have been a professor of computer science at UH since 1990.',
-   *                   interests: ['Application Development', 'Software Engineering', 'Databases'],
-   *                   title: 'Professor of Information and Computer Sciences',
-   *                   picture: 'http://philipmjohnson.org/headshot.jpg',
-   *                   github: 'https://github.com/philipmjohnson',
-   *                   facebook: 'https://facebook.com/philipmjohnson',
-   *                   instagram: 'https://instagram.com/philipmjohnson' });
+   * Profiles.define({ firstName: 'Dave',
+   *                   lastName: 'Walton',
+   *                   username: 'dwalton',
+   *                   bio: 'I love carpooling.',
+   *                   picture: 'http://weknowyourdreams.com/images/face/face-03.jpg',
+   *                   location: 'Kailua',
+   *                   vehicle: 'Buick'
+   *                   capacity: 2,
+   *                   vehiclePicture: 'http://1.bp.blogspot.com/-M2dpTAqyRZU/TpBMhqL9B1I/AAAAAAAAAWM/LI7JR_c9r50/s1600/car+spy+photos+6.jpg',
    * @param { Object } description Object with required key username.
-   * Remaining keys are optional.
    * Username must be unique for all users. It should be the UH email account.
-   * Interests is an array of defined interest names.
    * @throws { Meteor.Error } If a user with the supplied username already exists, or
    * if one or more interests are not defined, or if github, facebook, and instagram are not URLs.
    * @returns The newly created docID.
    */
-  define({ firstName = '', lastName = '', username, bio = '', interests, picture = '', title = '', github = '',
-      facebook = '', instagram = '' }) {
+  define({
+      firstName = '', lastName = '', username, bio = '', picture = '', location = '', vehicle = '',
+      capacity = 0, vehiclePicture = '',
+  }) {
     // make sure required fields are OK.
-    const checkPattern = { firstName: String, lastName: String, username: String, bio: String, picture: String,
-      title: String };
-    check({ firstName, lastName, username, bio, picture, title }, checkPattern);
+    const checkPattern = {
+      firstName: String, lastName: String, username: String, bio: String, picture: String,
+      location: String, vehicle: String, capacity: Number, vehiclePicture: String,
+    };
+    check({ firstName, lastName, username, bio, picture, location, vehicle, capacity, vehiclePicture }, checkPattern);
 
     if (this.find({ username }).count() > 0) {
       throw new Meteor.Error(`${username} is previously defined in another Profile`);
@@ -65,8 +64,10 @@ class ProfileCollection extends BaseCollection {
 
     // Throw an error if any of the passed Interest names are not defined.
     Interests.assertNames(interests);
-    return this._collection.insert({ firstName, lastName, username, bio, interests, picture, title, github,
-      facebook, instagram });
+    return this._collection.insert({
+      firstName, lastName, username, bio, picture, location, vehicle,
+      capacity, vehiclePicture
+    });
   }
 
   /**
@@ -80,13 +81,12 @@ class ProfileCollection extends BaseCollection {
     const lastName = doc.lastName;
     const username = doc.username;
     const bio = doc.bio;
-    const interests = doc.interests;
     const picture = doc.picture;
-    const title = doc.title;
-    const github = doc.github;
-    const facebook = doc.facebook;
-    const instagram = doc.instagram;
-    return { firstName, lastName, username, bio, interests, picture, title, github, facebook, instagram };
+    const location = doc.location;
+    const vehicle = doc.vehicle;
+    const capacity = doc.capacity;
+    const vehiclePicture = doc.vehiclePicture;
+    return { firstName, lastName, username, bio, picture, location, vehicle, capacity, vehiclePicture };
   }
 }
 

@@ -1,6 +1,5 @@
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import BaseCollection from '/imports/api/base/BaseCollection';
-import { Interests } from '/imports/api/interest/InterestCollection';
 import { check } from 'meteor/check';
 import { Meteor } from 'meteor/meteor';
 
@@ -65,7 +64,7 @@ class ProfileCollection extends BaseCollection {
     // Throw an error if any of the passed Interest names are not defined.
     return this._collection.insert({
       firstName, lastName, username, bio, picture, location, vehicle,
-      capacity, vehiclePicture
+      capacity, vehiclePicture,
     });
   }
 

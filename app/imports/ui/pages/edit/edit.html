@@ -72,4 +72,37 @@
         .dropdown()
     ;
   </script>
+
+  <!--///-->
+  <!--///-->
+  <!--///-->
+  <!--///-->
+  <!---->
+  <!---->
+
+  <div class="ui text container segment">
+    <form class="ui equal width form profile-data-form {{ successClass }} {{ errorClass }}">
+
+      <div class="fields">
+        {{> Text_Form_Control label="First" placeholder="first" value=profile.firstName errorMessage=(fieldError "firstName")}}
+        {{> Text_Form_Control label="Last" placeholder="last" value=profile.lastName errorMessage=(fieldError "lastName")}}
+
+      </div>
+
+      <div class="field">
+        {{> Text_Form_Control label="Picture" placeholder="http://foo.com/shot.jpg" value=profile.picture errorMessage=(fieldError "picture")}}
+      </div>
+
+      {{> TextArea_Form_Control label="Bio" value=profile.bio placeholder="Short bio statement here" errorMessage=(fieldError "bio")}}
+
+
+      <button class="ui primary button" type="submit">Submit</button>
+      {{#if displaySuccessMessage}}
+      <div class="ui success message">
+        <p>Profile data successfully updated.</p>
+      </div>
+      {{/if}}
+    </form>
+  </div>
+  
 </template>

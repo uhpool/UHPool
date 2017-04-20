@@ -1,7 +1,7 @@
 /* eslint prefer-arrow-callback: "off", no-unused-expressions: "off" */
 /* eslint-env mocha */
 
-import { UserAcceptedListings } from '/imports/api/profile/UserAcceptedListingsCollection';
+import { UserAcceptedListings } from '/imports/api/user_accepted_listings/UserAcceptedListingsCollection';
 import { Meteor } from 'meteor/meteor';
 import { expect } from 'chai';
 import { removeAllEntities } from '/imports/api/base/BaseUtilities';

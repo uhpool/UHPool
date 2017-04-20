@@ -52,8 +52,6 @@ class UserAcceptedListingsCollection extends BaseCollection {
       throw new Meteor.Error(`${usernameDriver} is previously defined in another Profile`);
     }
 
-    // Throw an error if any of the passed Interest names are not defined.
-    Interests.assertNames(interests);
     return this._collection.insert({ usernameDriver, usernamePotentialPassenger });
   }
 

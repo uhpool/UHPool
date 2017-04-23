@@ -1,11 +1,29 @@
 <template name="User_Footer">
   <footer>
-    <div style="padding-top: 15px" class="ui center aligned container">
-        <hr>
-      <a href="http://uhpool.github.io">UH Pool documentation</a>
-        <br>Department of Information and Computer Sciences <br />
-        <br>University of Hawaii
-        Honolulu, HI 96822<br />
+    <div style="..." class="ui center aligned container">
+          <hr>
+      <div class="ui accordion">
+        <div class="title">
+          <i class="dropdown icon"></i>
+          Contact Information
+        </div>
+        <div class="content">
+          <p><a href="http://uhpool.github.io">UH Pool</a></p>
+          <p>Department of Information and Computer Sciences</p>
+          <p>University of Hawaii</p>
+          <p>Honolulu, HI 96822</p>
+        </div>
+      </div>
+
     </div>
   </footer>
+  <script>
+    $('.accordion')
+        .accordion({
+          selector: {
+            trigger: '.title .icon'
+          }
+        })
+    ;
+  </script>
 </template>

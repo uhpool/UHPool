@@ -20,7 +20,7 @@
           errorMessage=(fieldError "picture")}}
         </div>
 
-        {{> TextArea_Form_Control label="Bio" value=profile.bio placeholder="Short bio statement here"
+        {{> TextArea_Form_Control label="About" value=profile.bio placeholder="Something about yourself..."
         errorMessage=(fieldError "bio")}}
 
       </div>
@@ -36,7 +36,7 @@
       <div class="column">
         <div class="field">
           {{> Text_Form_Control label="Vehicle" placeholder="vehicle" value=profile.vehicle errorMessage=(fieldError "vehicle")}}
-          {{> Select_Form_Control label="Capacity placeholder="vehicle capacity" value=profile.capacity errorMessage=(fieldError "capacity"}}
+          {{> Select_Form_Control label="Capacity" placeholder="vehicle capacity" value=profile.capacity options=[{ label: "4.0+", value: "4" }] errorMessage=(fieldError "capacity")}}
           <h3>Capacity</h3>
           <div class="ui selection dropdown">
             <input name="capacity" type="hidden">
@@ -76,6 +76,19 @@
               <div class="item" data-value="9">Kailua</div>
               <div class="item" data-value="10">Kane'ohe</div>
               <div class="item" data-value="11">Kapolei</div>
+              <div class="item" data-value="11">La'ie</div>
+              <div class="item" data-value="11">Lanikai</div>
+              <div class="item" data-value="11">Ma'ili</div>
+              <div class="item" data-value="11">Makaha</div>
+              <div class="item" data-value="11">Manoa</div>
+              <div class="item" data-value="11">Mililani</div>
+              <div class="item" data-value="11">NanaKuli</div>
+              <div class="item" data-value="11">Pearl City</div>
+              <div class="item" data-value="11">Wahiawa</div>
+              <div class="item" data-value="11">Wai'anae</div>
+              <div class="item" data-value="11">Waikiki</div>
+              <div class="item" data-value="11">Waimanalo</div>
+              <div class="item" data-value="11">Waipahu</div>
             </div>
           </div>
         </div>
@@ -93,6 +106,11 @@
 
   <script>
     $('.ui.selection.dropdown')
+        .dropdown()
+    ;
+  </script>
+  <script>
+    $('ui.dropdown.selection')
         .dropdown()
     ;
   </script>

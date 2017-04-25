@@ -1,84 +1,20 @@
 {
   "comment": "Initial contents for the BowFolios database. For development purposes only.",
   "collections": [
+
     {
-      "name": "InterestCollection",
+      "name": "ProfileCollection",
       "contents": [
         {
-          "name": "Software Engineering",
-          "description": "Techniques for development of high quality systems"
-        },
-        {
-          "name": "Algorithms",
-          "description": "A set of rules to be followed in computation"
-        },
-        {
-          "name": "Mobile Networks",
-          "description": "Networks created using mobile devices."
-        },
-        {
-          "name": "Sailing",
-          "description": ""
-        },
-        {
-          "name": "Mars",
-          "description": ""
-        },
-        {
-          "name": "Imu Cooking",
-          "description": "Hawaiian practice of cooking in a pit."
-        },
-        {
-          "name": "Scuba",
-          "description": ""
-        },
-        {
-          "name": "Photography",
-          "description": ""
-        },
-        {
-          "name": "Wind surfing",
-          "description": ""
-        },
-        {
-          "name": "Psychology",
-          "description": ""
-        },
-        {
-          "name": "Motorcycling",
-          "description": ""
-        },
-        {
-          "name": "Accreditation",
-          "description": ""
-        },
-        {
-          "name": "Paddling",
-          "description": ""
-        },
-        {
-          "name": "Crossfit",
-          "description": ""
-        },
-        {
-          "name": "Cybersecurity",
-          "description": ""
-        },
-        {
-          "name": "Surfing",
-          "description": ""
-        },
-        {
-          "name": "Computer Vision",
-          "description": ""
-        },
-        {
-          "name": "Martial Arts",
-          "description": ""
-        },
-        {
-          "name": "Evolutionary Computation",
-          "description": ""
+          "firstName": "John",
+          "lastName": "Doe",
+          "username": "johnson",
+          "bio": "I am a single lonely male.",
+          "picture": "/images/altenberg.jpg",
+          "location": "Honolulu",
+          "vehicle": "Kia",
+          "capacity": 2,
+          "vehiclePicture": "/images/davesBuickRegal.jpeg"
         }
       ]
     },
@@ -86,14 +22,142 @@
       "name": "ProfileCollection",
       "contents": [
         {
-          "firstName": "Jon",
-          "lastName": "Na",
-          "username": "jna",
-          "bio": "I am a single lonely male.",
+          "firstName": "Muck",
+          "lastName": "Mucky",
+          "username": "muck808",
+          "bio": "I am a single lonely woman.",
           "picture": "/images/altenberg.jpg",
-          "location": "Honolulu",
-          "vehicle": "Kia",
+          "location": "Aiea",
+          "vehicle": "Tesla",
+          "capacity": 4,
+          "vehiclePicture": "/images/davesBuickRegal.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "ProfileCollection",
+      "contents": [
+        {
+          "firstName": "Duck",
+          "lastName": "Quack",
+          "username": "quackdynasty",
+          "bio": "I am a single lonely duck.",
+          "picture": "/images/altenberg.jpg",
+          "location": "Hawaii Kai",
+          "vehicle": "GM",
+          "capacity": 1,
+          "vehiclePicture": "/images/davesBuickRegal.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "ProfileCollection",
+      "contents": [
+        {
+          "firstName": "Buck",
+          "lastName": "Bucky",
+          "username": "buck808",
+          "bio": "My name rhymes with.",
+          "picture": "/images/altenberg.jpg",
+          "location": "Aiea",
+          "vehicle": "Ford",
+          "capacity": 4,
+          "vehiclePicture": "/images/davesBuickRegal.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "ProfileCollection",
+      "contents": [
+        {
+          "firstName": "Junk",
+          "lastName": "Rat",
+          "username": "junkrat",
+          "bio": "Primed and Ready",
+          "picture": "/images/altenberg.jpg",
+          "location": "Waipahu",
+          "vehicle": "Jeep",
           "capacity": 2,
+          "vehiclePicture": "/images/davesBuickRegal.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "ProfileCollection",
+      "contents": [
+        {
+          "firstName": "Mick",
+          "lastName": "Cree",
+          "username": "mcree",
+          "bio": "I'm your huckleberry.",
+          "picture": "/images/altenberg.jpg",
+          "location": "Kapolei",
+          "vehicle": "Mustang",
+          "capacity": 3,
+          "vehiclePicture": "/images/davesBuickRegal.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "ProfileCollection",
+      "contents": [
+        {
+          "firstName": "Gen",
+          "lastName": "Jii",
+          "username": "genji",
+          "bio": "Mada mada.",
+          "picture": "/images/altenberg.jpg",
+          "location": "Manoa",
+          "vehicle": "Toyota",
+          "capacity": 4,
+          "vehiclePicture": "/images/davesBuickRegal.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "ProfileCollection",
+      "contents": [
+        {
+          "firstName": "Han",
+          "lastName": "Zoe",
+          "username": "hanzo",
+          "bio": "You know nothing.",
+          "picture": "/images/altenberg.jpg",
+          "location": "Waikiki",
+          "vehicle": "Mitsubishi",
+          "capacity": 1,
+          "vehiclePicture": "/images/davesBuickRegal.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "ProfileCollection",
+      "contents": [
+        {
+          "firstName": "Hilory",
+          "lastName": "Blimpton",
+          "username": "buildawall",
+          "bio": "I am a married lonely woman.",
+          "picture": "/images/altenberg.jpg",
+          "location": "Liliha",
+          "vehicle": "Land Rover",
+          "capacity": 5,
+          "vehiclePicture": "/images/davesBuickRegal.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "ProfileCollection",
+      "contents": [
+        {
+          "firstName": "Car",
+          "lastName": "Jack",
+          "username": "carjack",
+          "bio": "You can trust me.",
+          "picture": "/images/altenberg.jpg",
+          "location": "Waianae",
+          "vehicle": "Ferrari",
+          "capacity": 0,
           "vehiclePicture": "/images/davesBuickRegal.jpeg"
         }
       ]

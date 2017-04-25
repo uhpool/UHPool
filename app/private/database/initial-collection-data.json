@@ -1,5 +1,5 @@
 {
-  "comment": "Initial contents for the BowFolios database. For development purposes only.",
+  "comment": "Initial contents for the UHPool database. For development purposes only.",
   "collections": [
 
     {
@@ -135,12 +135,12 @@
       "contents": [
         {
           "firstName": "Hilory",
-          "lastName": "Blimpton",
+          "lastName": "Grump",
           "username": "buildawall",
           "bio": "I am a married lonely woman.",
           "picture": "/images/altenberg.jpg",
           "location": "Liliha",
-          "vehicle": "Land Rover",
+          "vehicle": "Chevys",
           "capacity": 5,
           "vehiclePicture": "/images/davesBuickRegal.jpeg"
         }
@@ -157,7 +157,7 @@
           "picture": "/images/altenberg.jpg",
           "location": "Waianae",
           "vehicle": "Ferrari",
-          "capacity": 0,
+          "capacity": 2,
           "vehiclePicture": "/images/davesBuickRegal.jpeg"
         }
       ]

@@ -34,62 +34,11 @@
       <div class="column">
         <div class="field">
           {{> Text_Form_Control label="Vehicle" placeholder="vehicle" value=profile.vehicle}}
-          {{> Select_Form_Control label="Capacity" placeholder="vehicle capacity" value=profile.capacity options=places}}
-          <h3>Capacity</h3>
-          <div class="ui selection dropdown">
-            <input name="capacity" type="hidden">
-            <i class="dropdown icon"></i>
-            <div class="default text">Capacity</div>
-            <div class="menu">
-              <div class="item" data-value="0">1</div>
-              <div class="item" data-value="1">2</div>
-              <div class="item" data-value="2">3</div>
-              <div class="item" data-value="3">4</div>
-              <div class="item" data-value="4">5</div>
-              <div class="item" data-value="5">6</div>
-              <div class="item" data-value="6">7</div>
-              <div class="item" data-value="7">8</div>
-              <div class="item" data-value="8">9</div>
-              <div class="item" data-value="9">10</div>
-            </div>
-          </div>
+          {{> Select_Form_Control label="Capacity" placeholder="vehicle capacity" value=profile.capacity options=capacities}}
         </div>
 
         <div class="field">
           {{> Select_Form_Control label="Location" placeholder="your location" value=profile.location options=places}}
-          <h3>Location</h3>
-          <div class="ui search selection dropdown">
-            <input name="location" type="hidden">
-            <i class="dropdown icon"></i>
-            <div class="default text">Select Location</div>
-            <div class="menu">
-              <div class="item" data-value="0">Aiea</div>
-              <div class="item" data-value="1">Ewa Beach</div>
-              <div class="item" data-value="2">Hale'iwa</div>
-              <div class="item" data-value="3">Hau'ula</div>
-              <div class="item" data-value="4">Hawaii Kai</div>
-              <div class="item" data-value="5">Honolulu</div>
-              <div class="item" data-value="6">Ka'a'awa</div>
-              <div class="item" data-value="7">Kahala</div>
-              <div class="item" data-value="8">Kahuku</div>
-              <div class="item" data-value="9">Kailua</div>
-              <div class="item" data-value="10">Kane'ohe</div>
-              <div class="item" data-value="11">Kapolei</div>
-              <div class="item" data-value="11">La'ie</div>
-              <div class="item" data-value="11">Lanikai</div>
-              <div class="item" data-value="11">Ma'ili</div>
-              <div class="item" data-value="11">Makaha</div>
-              <div class="item" data-value="11">Manoa</div>
-              <div class="item" data-value="11">Mililani</div>
-              <div class="item" data-value="11">NanaKuli</div>
-              <div class="item" data-value="11">Pearl City</div>
-              <div class="item" data-value="11">Wahiawa</div>
-              <div class="item" data-value="11">Wai'anae</div>
-              <div class="item" data-value="11">Waikiki</div>
-              <div class="item" data-value="11">Waimanalo</div>
-              <div class="item" data-value="11">Waipahu</div>
-            </div>
-          </div>
         </div>
       </div>
 

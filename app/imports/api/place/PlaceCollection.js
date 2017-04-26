@@ -18,7 +18,6 @@ class PlaceCollection extends BaseCollection {
   constructor() {
     super('Place', new SimpleSchema({
       name: { type: String },
-      description: { type: String, optional: true },
     }));
   }
 
@@ -26,7 +25,6 @@ class PlaceCollection extends BaseCollection {
    * Defines a new Place.
    * @example
    * Places.define({ name: 'Kailua'});
-   * @param { Object } description Object with key name.
    * Name must be previously undefined.
    * Creates a "slug" for this name and stores it in the slug field.
    * @throws {Meteor.Error} If the place definition includes a defined name.

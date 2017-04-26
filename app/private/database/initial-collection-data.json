@@ -15,12 +15,7 @@
           "vehicle": "Chevrolet",
           "capacity": 6,
           "vehiclePicture": "/images/davesBuickRegal.jpeg"
-        }
-      ]
-    },
-    {
-      "name": "ProfileCollection",
-      "contents": [
+        },
         {
           "firstName": "Junk",
           "lastName": "Rat",
@@ -31,12 +26,7 @@
           "vehicle": "Jeep",
           "capacity": 2,
           "vehiclePicture": "/images/davesBuickRegal.jpeg"
-        }
-      ]
-    },
-    {
-      "name": "ProfileCollection",
-      "contents": [
+        },
         {
           "firstName": "Mick",
           "lastName": "Cree",
@@ -47,12 +37,7 @@
           "vehicle": "Mustang",
           "capacity": 3,
           "vehiclePicture": "/images/davesBuickRegal.jpeg"
-        }
-      ]
-    },
-    {
-      "name": "ProfileCollection",
-      "contents": [
+        },
         {
           "firstName": "Gen",
           "lastName": "Jii",
@@ -63,12 +48,7 @@
           "vehicle": "Toyota",
           "capacity": 4,
           "vehiclePicture": "/images/davesBuickRegal.jpeg"
-        }
-      ]
-    },
-    {
-      "name": "ProfileCollection",
-      "contents": [
+        },
         {
           "firstName": "Han",
           "lastName": "Zoe",
@@ -79,14 +59,6 @@
           "vehicle": "Mitsubishi",
           "capacity": 7,
           "vehiclePicture": "/images/davesBuickRegal.jpeg"
-        }
-      ]
-    },
-    {
-      "name": "PlaceCollection",
-      "contents": [
-        {
-          "name": "Kailua"
         }
       ]
     },

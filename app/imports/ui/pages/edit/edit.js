@@ -1,11 +1,10 @@
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { _ } from 'meteor/underscore';
-import { Places } from '/imports/api/place/PlaceCollection';
 import { Profiles } from '/imports/api/profile/ProfileCollection';
 
 Template.Edit_Page.onCreated(function onCreated() {
-  this.subscribe(Places.getPublicationName());
+  this.subscribe(Profiles.getPublicationName());
   this.messageFlags = new ReactiveDict();
 });
 

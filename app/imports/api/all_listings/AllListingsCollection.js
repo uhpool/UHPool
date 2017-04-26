@@ -1,6 +1,5 @@
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import BaseCollection from '/imports/api/base/BaseCollection';
-import { Interests } from '/imports/api/interest/InterestCollection';
 import { check } from 'meteor/check';
 import { Meteor } from 'meteor/meteor';
 
@@ -22,13 +21,13 @@ class AllListingsCollection extends BaseCollection {
         day: {type: String},
         startTime: {type: Date},
         endTime: {type: Date},
-        statusIndicator: {type: Array},
+        statusIndicator: {type: String},
     }));
   }
 
-  define({ username = '', location = '', day = '', startTime = '', endTime = '', statusIndicator = {} }) {
+  define({ username = '', location = '', day = '', startTime = '', endTime = '', statusIndicator = '' }) {
     // make sure required fields are OK.
-    const checkPattern = { username: String, location: String, day: String, startTime: Date, endTime: Date, statusIndicator: Array};
+    const checkPattern = { username: String, location: String, day: String, startTime: Date, endTime: Date, statusIndicator: String};
     check({ username, location, day, startTime, endTime, statusIndicator }, checkPattern);
 
     if (this.find({ username }).count() > 0) {

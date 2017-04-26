@@ -1,5 +1,6 @@
 <template name="MyListings_Page">
   <div class="ui container">
+      {{#if Template.subscriptionsReady}}
     <table class="ui celled padded table">
       <thead>
       <tr><th class="single line">Location</th>
@@ -9,6 +10,7 @@
         <th>Delete</th>
       </tr></thead>
       <tbody>
+      {{ #each l in userListings }}
       <tr>
           <td>
               <div class="ui selection dropdown">
@@ -191,5 +193,15 @@
       </tr>
       </tbody>
     </table>
+      {{/if}}
   </div>
+    <div class="ui container" style="margin-top: 10px">
+        <div class="single line">
+            <button class="ui inverted green button">Add</button>
+            <button class="ui green button">Save/Update</button>
+        </div>
+    </div>
+    <script>
+        $('.ui.selection.dropdown').dropdown();
+    </script>
 </template>

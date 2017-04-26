@@ -1,13 +1,12 @@
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { _ } from 'meteor/underscore';
-import { Places } from '/imports/api/places/PlacesCollection';
+import { Places } from '/imports/api/place/PlaceCollection';
 import { Profiles } from '/imports/api/profile/ProfileCollection';
 
 Template.Edit_Page.onCreated(function onCreated() {
   this.subscribe(Places.getPublicationName());
   this.messageFlags = new ReactiveDict();
-  this.messageFlags.set(selectedPlacesKey, undefined);
 });
 
 Template.Edit_Page.helpers({
@@ -18,7 +17,7 @@ Template.Edit_Page.helpers({
 
   places() {
     return _.map(Places.findAll(),
-          function makePlaceObject() {
+          function makePlaceObject(place) {
             return {
               label: place.name,
             }

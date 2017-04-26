@@ -6,10 +6,8 @@
 
       <div class="column">
         <div class="fields">
-          {{> Text_Form_Control label="First" placeholder="first" value=profile.firstName errorMessage=(fieldError
-          "firstName")}}
-          {{> Text_Form_Control label="Last" placeholder="last" value=profile.lastName errorMessage=(fieldError
-          "lastName")}}
+          {{> Text_Form_Control label="First" placeholder="first" value=profile.firstName}}
+          {{> Text_Form_Control label="Last" placeholder="last" value=profile.lastName}}
 
         </div>
 
@@ -17,11 +15,11 @@
 
         <div class="field">
           {{> Text_Form_Control label="Picture" placeholder="http://foo.com/shot.jpg" value=profile.picture
-          errorMessage=(fieldError "picture")}}
+          }}
         </div>
 
         {{> TextArea_Form_Control label="About" value=profile.bio placeholder="Something about yourself..."
-        errorMessage=(fieldError "bio")}}
+        }}
 
       </div>
 
@@ -29,14 +27,14 @@
         <div class="field">
           <img class="ui bordered image" src="/images/car-icon.png"/>
           {{> Text_Form_Control label="VehiclePicture" placeholder="http://foo.com/vehicle_shot.jpg"
-          value=profile.vehiclePicture errorMessage=(fieldError "vehiclePicture")}}
+          value=profile.vehiclePicture}}
         </div>
       </div>
 
       <div class="column">
         <div class="field">
-          {{> Text_Form_Control label="Vehicle" placeholder="vehicle" value=profile.vehicle errorMessage=(fieldError "vehicle")}}
-          {{> Select_Form_Control label="Capacity" placeholder="vehicle capacity" value=profile.capacity options=places }}
+          {{> Text_Form_Control label="Vehicle" placeholder="vehicle" value=profile.vehicle}}
+          {{> Select_Form_Control label="Capacity" placeholder="vehicle capacity" value=profile.capacity options=places}}
           <h3>Capacity</h3>
           <div class="ui selection dropdown">
             <input name="capacity" type="hidden">
@@ -58,7 +56,7 @@
         </div>
 
         <div class="field">
-          {{> Select_Form_Control label="Location" placeholder="your location" value=profile.location options=places }}
+          {{> Select_Form_Control label="Location" placeholder="your location" value=profile.location options=places}}
           <h3>Location</h3>
           <div class="ui search selection dropdown">
             <input name="location" type="hidden">

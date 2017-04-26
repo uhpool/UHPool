@@ -36,7 +36,7 @@
       <div class="column">
         <div class="field">
           {{> Text_Form_Control label="Vehicle" placeholder="vehicle" value=profile.vehicle errorMessage=(fieldError "vehicle")}}
-          {{> Select_Form_Control label="Capacity" placeholder="vehicle capacity" value=profile.capacity options=[{ label: "4.0+", value: "4" }] errorMessage=(fieldError "capacity")}}
+          {{> Select_Form_Control label="Capacity" placeholder="vehicle capacity" value=profile.capacity options=places }}
           <h3>Capacity</h3>
           <div class="ui selection dropdown">
             <input name="capacity" type="hidden">
@@ -58,6 +58,7 @@
         </div>
 
         <div class="field">
+          {{> Select_Form_Control label="Location" placeholder="your location" value=profile.location options=places }}
           <h3>Location</h3>
           <div class="ui search selection dropdown">
             <input name="location" type="hidden">

@@ -1,5 +1,5 @@
 {
-  "name": "bowfolios",
+  "name": "uhpool",
   "private": true,
   "scripts": {
     "start": "meteor --no-release-check --settings ../config/settings.json",

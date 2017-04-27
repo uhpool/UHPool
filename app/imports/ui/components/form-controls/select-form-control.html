@@ -3,7 +3,7 @@
    Provide a single or multiple drop-down select control.
 
    Parameters:
-     label, name, value, placeholder, dataid, errorMessage (String)
+     label, name, value, placeholder, id, errorMessage (String)
      required, multiple (Boolean)
      options (Array[Object]). Specifies each selection. Can have fields label, value, selected.
        Example: [{ label: "4.0+", value: "4" } { label: "3.0-3.9", value: "3", selected: true }]
@@ -23,9 +23,8 @@
   }}
 
   <div class="{{#if required}}required{{/if}} field">
-    <label>{{label}}</label>
     <div multiple="{{multiple}}" class="ui selection dropdown">
-        <input type="hidden" name="{{#if name}}{{name}}{{else}}{{label}}{{/if}}" value="{{value}}" dataid="{{id}}" />
+        <input type="hidden" name="{{#if name}}{{name}}{{else}}{{label}}{{/if}}" value="{{value}}" href="{{id}}" />
         <i class="dropdown icon"></i>
         <div class="default text">{{placeholder}}</div>
         <div class="menu">

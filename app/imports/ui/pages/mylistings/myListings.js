@@ -77,13 +77,14 @@ Template.MyListings_Page.events({
         event.preventDefault();
         const username = Meteor.user().profile.name;
         for(let i = 0; i<event.target.locationFrom.length; i++) {
-            const id = event.target.locationFrom[i].dataid;
+            const id = $(event.target.locationFrom[i]).attr("href");
+            console.log(id);
             const locationFrom = event.target.locationFrom[i].value;
             const locationTo = event.target.locationTo[i].value;
             const day = event.target.day[i].value;
             const startTime = event.target.startTime[i].value;
             const endTime = event.target.endTime[i].value;
-            const statusIndicator = AllListings.findOne({_id: id}).statusIndicator; //do by id later
+            const statusIndicator = AllListings.findOne({_id: id}).statusIndicator;
             console.log(event.target.locationFrom);
             const updatedListData = { username, locationFrom, locationTo, day, startTime, endTime, statusIndicator };
             console.log(updatedListData);
@@ -94,15 +95,15 @@ Template.MyListings_Page.events({
             // Determine validity.
             instance.context.validate(updatedListData);
             if (instance.context.isValid()) {
-                AllListings.update(id, { $set: updatedListData }, function(error, affectedDocs) {
+                AllListings.update({_id: id}, { $set: updatedListData }, function(error, affectedDocs) {
                     if (error) {
                         throw new Meteor.Error(500, error.message);
                     } else {
                         return "Update Successful";
                     }
                 });
+                console.log(AllListings.findOne({_id: id}));
                 instance.messageFlags.set(displayErrorMessages, false);
-                alert("gg");
             } else {
                 instance.messageFlags.set(displayErrorMessages, true);
                 alert("error");

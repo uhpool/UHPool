@@ -5,11 +5,11 @@
             <table class="ui celled padded table">
                 <thead>
                 <tr>
-                    <th class="single line">Location (From)</th>
-                    <th class="single line">Location (To)</th>
+                    <th class="single line">Pickup Location</th>
+                    <th class="single line">Drop Off Location</th>
                     <th>Day</th>
-                    <th>Start Time</th>
-                    <th>End Time</th>
+                    <th>Pickup Time</th>
+                    <th>Leeway Until...</th>
                     <th>Delete</th>
                 </tr>
                 </thead>
@@ -17,27 +17,27 @@
                 {{ #each i in userListings }}
                 <tr>
                     <td>
-                        {{ >Select_Form_Control dataid=i._id label="Location (From)" name="locationFrom" value="i.locationFrom"
+                        {{ >Select_Form_Control id=i._id label="Pickup Location" name="locationFrom" value=i.locationFrom
                             placeholder="Select Location" required=true multiple=false
                                 options=saveMe }}
                     </td>
                     <td>
-                        {{ >Select_Form_Control dataid=i._id label="Location (To)" name="locationTo" value="i.locationTo"
+                        {{ >Select_Form_Control id=i._id label="Drop Off Location" name="locationTo" value=i.locationTo
                             placeholder="Select Location" required=true multiple=false
                                 options=saveMe }}
                     </td>
                     <td>
-                        {{ >Select_Form_Control dataid=i._id label="Day" name="day" value="i.day"
+                        {{ >Select_Form_Control id=i._id label="Day" name="day" value=i.day
                             placeholder="Select Day" required=true multiple=false
                                 options=selectDay }}
                     </td>
                     <td>
-                        {{ >Select_Form_Control dataid=i._id label="Start Time" name="startTime" value="i.startTime"
+                        {{ >Select_Form_Control id=i._id label="Pickup Time" name="startTime" value=i.startTime
                             placeholder="Select Time" required=true multiple=false
                                 options=selectTime }}
                     </td>
                     <td>
-                        {{ >Select_Form_Control dataid=i._id label="End Time" name="endTime" value="i.endTime"
+                        {{ >Select_Form_Control id=i._id label="To..." name="endTime" value=i.endTime
                             placeholder="Select Time" required=true multiple=false
                                 options=selectTime }}
                     </td>

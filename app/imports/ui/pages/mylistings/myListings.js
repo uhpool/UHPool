@@ -19,15 +19,60 @@ Template.MyListings_Page.helpers({
       let user = Meteor.user().profile.name;
       return AllListings.find({username: user});
   },
+    saveMe() {
+        return [ { label: "Aiea", value: "0" },
+            { label: "Ewa Beach", value: "1" },
+            { label: "Hale'iwa", value: "2" },
+            { label: "Hau'ula", value: "3" },
+            { label: "Hawaii Kai", value: "4" },
+            { label: "Honolulu", value: "5" },
+            { label: "Ka'a'awa", value: "6" },
+            { label: "Kahala", value: "7" },
+            { label: "Kahuku", value: "8" },
+            { label: "Kailua", value: "9" },
+            { label: "Kane'ohe", value: "10" },
+            { label: "Kapolei", value: "11" }];
+    },
+    selectDay() {
+      return [ { label: "Sunday", value: "0" },
+          { label: "Monday", value: "1" },
+          { label: "Tuesday", value: "2" },
+          { label: "Wednesday", value: "3" },
+          { label: "Thursday", value: "4" },
+          { label: "Friday", value: "5" },
+          { label: "Saturday", value: "6" }];
+    },
+    selectTime() {
+      return [ { label: "18:00", value: "15" },
+          { label: "04:00", value: "1" },
+          { label: "05:00", value: "2" },
+          { label: "06:00", value: "3" },
+          { label: "07:00", value: "4" },
+          { label: "08:00", value: "5" },
+          { label: "09:00", value: "6" },
+          { label: "10:00", value: "7" },
+          { label: "11:00", value: "8" },
+          { label: "12:00", value: "9" },
+          { label: "13:00", value: "10" },
+          { label: "14:00", value: "11" },
+          { label: "15:00", value: "12" },
+          { label: "16:00", value: "13" },
+          { label: "17:00", value: "14" }];
+    },
+    routeUserName() {
+        return FlowRouter.getParam('username');
+    },
 });
 
 Template.MyListings_Page.events({
-    'click .delete'(event, instance) {
-        event.preventDefault();
+    "click [data-action='task/delete']"(event, i) {
+        // delete the task
+        const id = $(event.target).attr("href");
         if(confirm("Do you really want to delete this entry?")) {
-            AllListings.remove(FlowRouter.getParam('_id'));
+            console.log(id);
+            AllListings.remove(id);
             instance.messageFlags.set(displayErrorMessages, false);
-            //FlowRouter.go('MyListings_Page');
+            FlowRouter.go('MyListings_Page', {username: FlowRouter.getParam('username')});
         }
     },
     'submit .list-data-form'(event, instance) {

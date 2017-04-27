@@ -1,88 +1,37 @@
 <template name="Listings_Page">
-  <div class="ui grid container">
-    <div class="ui row" style="margin-top: 10px">
-      <div class="ui two wide green column">
-        <p class="large text" style="vertical-align:middle;text-align:center;">Accept</p>
-      </div>
-      <div class="ui ten wide #ededed column">
-        <p class="large text">Jane Doe is offering a ride from UH Manoa to Ala Moana</p>
-      </div>
-      <div class="ui two wide column">
-        <p class="large text">From 4:00pm</p>
-      </div>
-      <div class="ui two wide column">
-        <p class="large text">To 6:00pm</p>
-      </div>
+    {{#if Template.subscriptionsReady}}
+    <div class="ui grid container">
+        {{ #each i in userPendingListings }}
+        <div class="ui row" style="margin-top: 10px">
+            <div class="ui two wide green column">
+                <p class="large text" style="vertical-align:middle;text-align:center;">{{i.status}}</p>
+            </div>
+            <div class="ui ten wide #ededed column">
+                <p class="large text">{{i.name}} is offering a ride from {{i.locationFrom}} to {{i.locationTo}}</p>
+            </div>
+            <div class="ui two wide column">
+                <p class="large text">From {{i.startTime}}</p>
+            </div>
+            <div class="ui two wide column">
+                <p class="large text">To {{i.endTime}}</p>
+            </div>
+        </div>
+        {{/each}}
+
+        {{ #each i in userAllListings }}
+        <div class="ui two wide green column">
+            <p class="large text" style="vertical-align:middle;text-align:center;">Accept</p>
+        </div>
+        <div class="ui ten wide #ededed column">
+            <p class="large text">Jane Doe is offering a ride from UH Manoa to Ala Moana</p>
+        </div>
+        <div class="ui two wide column">
+            <p class="large text">From 4:00pm</p>
+        </div>
+        <div class="ui two wide column">
+            <p class="large text">To 6:00pm</p>
+        </div>
+        {{/each}}
     </div>
-    <div class="ui row" style="margin-top: 10px">
-      <div class="ui two wide green column">
-        <p class="large text" style="vertical-align:middle;text-align:center;">Accept</p>
-      </div>
-      <div class="ui ten wide #ededed column">
-        <p class="large text">Jane Doe is offering a ride from UH Manoa to Ala Moana</p>
-      </div>
-      <div class="ui two wide column">
-        <p class="large text">From 4:00pm</p>
-      </div>
-      <div class="ui two wide column">
-        <p class="large text">To 6:00pm</p>
-      </div>
-    </div>
-    <div class="ui row" style="margin-top: 10px">
-      <div class="ui two wide green column">
-        <p class="large text" style="vertical-align:middle;text-align:center;">Accept</p>
-      </div>
-      <div class="ui ten wide #ededed column">
-        <p class="large text">Jane Doe is offering a ride from UH Manoa to Ala Moana</p>
-      </div>
-      <div class="ui two wide column">
-        <p class="large text">From 4:00pm</p>
-      </div>
-      <div class="ui two wide column">
-        <p class="large text">To 6:00pm</p>
-      </div>
-    </div>
-    <div class="ui row" style="margin-top: 10px">
-      <div class="ui two wide green column">
-        <p class="large text" style="vertical-align:middle;text-align:center;">Accept</p>
-      </div>
-      <div class="ui ten wide #ededed column">
-        <p class="large text">Jane Doe is offering a ride from UH Manoa to Ala Moana</p>
-      </div>
-      <div class="ui two wide column">
-        <p class="large text">From 4:00pm</p>
-      </div>
-      <div class="ui two wide column">
-        <p class="large text">To 6:00pm</p>
-      </div>
-    </div>
-    <div class="ui row" style="margin-top: 10px">
-      <div class="ui two wide green column">
-        <p class="large text" style="vertical-align:middle;text-align:center;">Accept</p>
-      </div>
-      <div class="ui ten wide #ededed column">
-        <p class="large text">Jane Doe is offering a ride from UH Manoa to Ala Moana</p>
-      </div>
-      <div class="ui two wide column">
-        <p class="large text">From 4:00pm</p>
-      </div>
-      <div class="ui two wide column">
-        <p class="large text">To 6:00pm</p>
-      </div>
-    </div>
-    <div class="ui row" style="margin-top: 10px">
-      <div class="ui two wide green column">
-        <p class="large text" style="vertical-align:middle;text-align:center;">Accept</p>
-      </div>
-      <div class="ui ten wide #ededed column">
-        <p class="large text">Jane Doe is offering a ride from UH Manoa to Ala Moana</p>
-      </div>
-      <div class="ui two wide column">
-        <p class="large text">From 4:00pm</p>
-      </div>
-      <div class="ui two wide column">
-        <p class="large text">To 6:00pm</p>
-      </div>
-    </div>
-  </div>
+    {{/if}}
 </template>

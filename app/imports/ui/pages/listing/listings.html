@@ -3,10 +3,12 @@
     <div class="ui grid container">
         {{ #each i in userPendingListings }}
         <div class="ui row" style="margin-top: 10px">
-            <div class="ui two wide green column">
-                <p class="large text" style="vertical-align:middle;text-align:center;">{{i.status}}</p>
+            <div class="ui two wide column">
+                <button class="ui inverted orange button toggle" href="{{i.id}}" data-action="task/swappending" type="click">
+                    Pending
+                </button>
             </div>
-            <div class="ui ten wide #ededed column">
+            <div class="ui eight wide #ededed column">
                 <p class="large text">{{i.name}} is offering a ride from {{i.locationFrom}} to {{i.locationTo}}</p>
             </div>
             <div class="ui two wide column">
@@ -15,21 +17,29 @@
             <div class="ui two wide column">
                 <p class="large text">To {{i.endTime}}</p>
             </div>
+            <div class="ui two wide column">
+                <p class="large text">On {{i.day}}</p>
+            </div>
         </div>
         {{/each}}
 
         {{ #each i in userAllListings }}
-        <div class="ui two wide green column">
-            <p class="large text" style="vertical-align:middle;text-align:center;">Accept</p>
+        <div class="ui two wide column">
+            <button class="ui inverted green button toggle" href="{{i.id}}" data-action="task/swapaccept" type="click">
+                Accept
+            </button>
         </div>
-        <div class="ui ten wide #ededed column">
-            <p class="large text">Jane Doe is offering a ride from UH Manoa to Ala Moana</p>
+        <div class="ui eight wide #ededed column">
+            <p class="large text">{{i.name}} is offering a ride from {{i.locationFrom}} to {{i.locationTo}}</p>
         </div>
         <div class="ui two wide column">
-            <p class="large text">From 4:00pm</p>
+            <p class="large text">From {{i.startTime}}</p>
         </div>
         <div class="ui two wide column">
-            <p class="large text">To 6:00pm</p>
+            <p class="large text">To {{i.endTime}}</p>
+        </div>
+        <div class="ui two wide column">
+            <p class="large text">On {{i.day}}</p>
         </div>
         {{/each}}
     </div>

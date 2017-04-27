@@ -5,11 +5,11 @@
             <table class="ui celled padded table">
                 <thead>
                 <tr>
-                    <th class="single line">Location (From)</th>
-                    <th class="single line">Location (To)</th>
+                    <th class="single line">Pickup Location</th>
+                    <th class="single line">Drop Off Location</th>
                     <th>Day</th>
-                    <th>Start Time</th>
-                    <th>End Time</th>
+                    <th>Pickup Time</th>
+                    <th>Leeway Until...</th>
                     <th>Delete</th>
                 </tr>
                 </thead>
@@ -17,89 +17,33 @@
                 {{ #each i in userListings }}
                 <tr>
                     <td>
-                        {{ >Select_Form_Control label="Location (From)" name="locationFrom" value="i.locationFrom"
-                            placeholder="Select Location" required="true" multiple="false"
-                                options=[ { label: "Aiea", value: "0" },
-                                { label: "Ewa Beach", value: "1" },
-                                { label: "Hale'iwa", value: "2" },
-                                { label: "Hau'ula", value: "3" },
-                                { label: "Hawaii Kai", value: "4" },
-                                { label: "Honolulu", value: "5" },
-                                { label: "Ka'a'awa", value: "6" },
-                                { label: "Kahala", value: "7" },
-                                { label: "Kahuku", value: "8" },
-                                { label: "Kailua", value: "9" },
-                                { label: "Kane'ohe", value: "10" },
-                                { label: "Kapolei", value: "11" }] }}
+                        {{ >Select_Form_Control id=i._id label="Pickup Location" name="locationFrom" value=i.locationFrom
+                            placeholder="Select Location" required=true multiple=false
+                                options=saveMe }}
                     </td>
                     <td>
-                        {{ >Select_Form_Control label="Location (To)" name="locationTo" value="i.locationTo"
-                            placeholder="Select Location" required="true" multiple="false"
-                                options=[ { label: "Aiea", value: "0" },
-                                { label: "Ewa Beach", value: "1" },
-                                { label: "Hale'iwa", value: "2" },
-                                { label: "Hau'ula", value: "3" },
-                                { label: "Hawaii Kai", value: "4" },
-                                { label: "Honolulu", value: "5" },
-                                { label: "Ka'a'awa", value: "6" },
-                                { label: "Kahala", value: "7" },
-                                { label: "Kahuku", value: "8" },
-                                { label: "Kailua", value: "9" },
-                                { label: "Kane'ohe", value: "10" },
-                                { label: "Kapolei", value: "11" }] }}
+                        {{ >Select_Form_Control id=i._id label="Drop Off Location" name="locationTo" value=i.locationTo
+                            placeholder="Select Location" required=true multiple=false
+                                options=saveMe }}
                     </td>
                     <td>
-                        {{ >Select_Form_Control label="Day" name="day" value="i.day"
-                            placeholder="Select Day" required="true" multiple="false"
-                                options=[ { label: "Sunday", value: "0" },
-                                { label: "Monday", value: "1" },
-                                { label: "Tuesday", value: "2" },
-                                { label: "Wednesday", value: "3" },
-                                { label: "Thursday", value: "4" },
-                                { label: "Friday", value: "5" },
-                                { label: "Saturday", value: "6" }] }}
+                        {{ >Select_Form_Control id=i._id label="Day" name="day" value=i.day
+                            placeholder="Select Day" required=true multiple=false
+                                options=selectDay }}
                     </td>
                     <td>
-                        {{ >Select_Form_Control label="Start Time" name="startTime" value="i.startTime"
-                            placeholder="Select Time" required="true" multiple="false"
-                                options=[ { label: "18:00", value: "15" },
-                                { label: "04:00", value: "1" },
-                                { label: "05:00", value: "2" },
-                                { label: "06:00", value: "3" },
-                                { label: "07:00", value: "4" },
-                                { label: "08:00", value: "5" },
-                                { label: "09:00", value: "6" },
-                                { label: "10:00", value: "7" },
-                                { label: "11:00", value: "8" },
-                                { label: "12:00", value: "9" },
-                                { label: "13:00", value: "10" },
-                                { label: "14:00", value: "11" },
-                                { label: "15:00", value: "12" },
-                                { label: "16:00", value: "13" },
-                                { label: "17:00", value: "14" }] }}
+                        {{ >Select_Form_Control id=i._id label="Pickup Time" name="startTime" value=i.startTime
+                            placeholder="Select Time" required=true multiple=false
+                                options=selectTime }}
                     </td>
                     <td>
-                        {{ >Select_Form_Control label="End Time" name="endTime" value="i.endTime"
-                            placeholder="Select Time" required="true" multiple="false"
-                                options=[ { label: "18:00", value: "15" },
-                                { label: "04:00", value: "1" },
-                                { label: "05:00", value: "2" },
-                                { label: "06:00", value: "3" },
-                                { label: "07:00", value: "4" },
-                                { label: "08:00", value: "5" },
-                                { label: "09:00", value: "6" },
-                                { label: "10:00", value: "7" },
-                                { label: "11:00", value: "8" },
-                                { label: "12:00", value: "9" },
-                                { label: "13:00", value: "10" },
-                                { label: "14:00", value: "11" },
-                                { label: "15:00", value: "12" },
-                                { label: "16:00", value: "13" },
-                                { label: "17:00", value: "14" }] }}
+                        {{ >Select_Form_Control id=i._id label="To..." name="endTime" value=i.endTime
+                            placeholder="Select Time" required=true multiple=false
+                                options=selectTime }}
                     </td>
                     <td>
-                        <a class="ui inverted red button delete"
-                           href="{{pathFor 'MyListings_Page' username=routeUserName _id=i._id}}">Delete</a>
+                        <button name="del" class="ui inverted red button delete"
+                           href="{{i._id}}" type="click" data-action="task/delete">Delete</button>
                     </td>
                 </tr>
                 {{/each}}

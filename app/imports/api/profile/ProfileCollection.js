@@ -74,17 +74,17 @@ class ProfileCollection extends BaseCollection {
    * @returns { Object } An object representing the definition of docID.
    */
   dumpOne(docID) {
-    const doc = this.findDoc(docID);
-    const firstName = doc.firstName;
-    const lastName = doc.lastName;
-    const username = doc.username;
-    const bio = doc.bio;
-    const picture = doc.picture;
-    const location = doc.location;
-    const vehicle = doc.vehicle;
-    const capacity = doc.capacity;
-    const vehiclePicture = doc.vehiclePicture;
-    return { firstName, lastName, username, bio, picture, location, vehicle, capacity, vehiclePicture };
+      const doc = this.findDoc(docID);
+      const firstName = doc.firstName;
+      const lastName = doc.lastName;
+      const username = doc.username;
+      const bio = doc.bio;
+      const picture = doc.picture;
+      const location = doc.location;
+      const vehicle = doc.vehicle;
+      const capacity = doc.capacity;
+      const vehiclePicture = doc.vehiclePicture;
+      return { firstName, lastName, username, bio, picture, location, vehicle, capacity, vehiclePicture };
   }
 }
 

@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Profiles } from '/imports/api/profile/ProfileCollection';
 import { Interests } from '/imports/api/interest/InterestCollection';
 import { AllListings } from '/imports/api/all_listings/AllListingsCollection';
+import { UserAcceptedListings } from '/imports/api/user_accepted_listings/UserAcceptedListingsCollection';
 import { _ } from 'meteor/underscore';
 
 /* global Assets */
@@ -55,10 +56,15 @@ Meteor.startup(() => {
 
     if (AllListings.find().count() === 0) {
         AllListings.insert(updatedListData);
-        console.log("here");
     }
-    if(AllListings.find().count()===0) {
-      console.log("here2");
+
+    if(UserAcceptedListings.find().count() === 0) {
+        const usernameDriver = 'testDriver';
+        const usernamePotentialPassenger = 'testPassenger';
+
+        const ual = { usernameDriver, usernamePotentialPassenger };
+
+        UserAcceptedListings.insert(ual);
     }
-    console.log(AllListings.find().fetch());
+    console.log(UserAcceptedListings.find().fetch());
 });

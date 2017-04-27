@@ -71,42 +71,42 @@ Template.MyListings_Page.events({
         if(confirm("Do you really want to delete this entry?")) {
             console.log(id);
             AllListings.remove(id);
-            instance.messageFlags.set(displayErrorMessages, false);
-            FlowRouter.go('MyListings_Page', {username: FlowRouter.getParam('username')});
         }
     },
     'submit .list-data-form'(event, instance) {
         event.preventDefault();
-        /*username: { type: String },
-         locationFrom: {type: String},
-         locationTo: {type: String},
-         day: {type: String},
-         startTime: {type: Date},
-         endTime: {type: Date},
-         statusIndicator: {type: String},*/
-        // Get name (text field)
-        let user = Meteor.user().profile.name;
-        const locFrom = event.target.locationFrom.value;
-        const locTo = event.target.locationTo.value;
-        const day = event.target.day.value;
-        const startTime = event.target.startTime.value;
-        const endTime = event.target.endTime.value;
-        const indi = AllListings.findOne({username: user}).statusIndicator;
-
-        const updatedListData = { locFrom, locTo, day, startTime, endTime, indi };
-        // Clear out any old validation errors.
-        instance.context.resetValidation();
-        // Invoke clean so that newStudentData reflects what will be inserted.
-        AllListingsCollection.clean(updatedListData);
-        // Determine validity.
-        instance.context.validate(updatedListData);
-        if (instance.context.isValid()) {
-            AllListings.update(user, { $set: updatedListData });
-            instance.messageFlags.set(displayErrorMessages, false);
-            alert("gg");
-            FlowRouter.go('MyListings_Page');
-        } else {
-            instance.messageFlags.set(displayErrorMessages, true);
+        const username = Meteor.user().profile.name;
+        for(let i = 0; i<event.target.locationFrom.length; i++) {
+            const id = event.target.locationFrom[i].dataid;
+            const locationFrom = event.target.locationFrom[i].value;
+            const locationTo = event.target.locationTo[i].value;
+            const day = event.target.day[i].value;
+            const startTime = event.target.startTime[i].value;
+            const endTime = event.target.endTime[i].value;
+            const statusIndicator = AllListings.findOne({_id: id}).statusIndicator; //do by id later
+            console.log(event.target.locationFrom);
+            const updatedListData = { username, locationFrom, locationTo, day, startTime, endTime, statusIndicator };
+            console.log(updatedListData);
+            // Clear out any old validation errors.
+            instance.context.resetValidation();
+            // Invoke clean so that newStudentData reflects what will be inserted.
+            AllListingsCollection.clean(updatedListData);
+            // Determine validity.
+            instance.context.validate(updatedListData);
+            if (instance.context.isValid()) {
+                AllListings.update(id, { $set: updatedListData }, function(error, affectedDocs) {
+                    if (error) {
+                        throw new Meteor.Error(500, error.message);
+                    } else {
+                        return "Update Successful";
+                    }
+                });
+                instance.messageFlags.set(displayErrorMessages, false);
+                alert("gg");
+            } else {
+                instance.messageFlags.set(displayErrorMessages, true);
+                alert("error");
+            }
         }
     },
     'click .add'(event, instance) {
@@ -131,8 +131,6 @@ Template.MyListings_Page.events({
         if (instance.context.isValid()) {
             AllListings.insert(updatedListData);
             instance.messageFlags.set(displayErrorMessages, false);
-            //alert("test");
-            //FlowRouter.go('');
         } else {
             instance.messageFlags.set(displayErrorMessages, true);
             alert("error");

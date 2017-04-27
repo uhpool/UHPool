@@ -50,6 +50,17 @@
           "vehiclePicture": "/images/davesBuickRegal.jpeg"
         },
         {
+          "firstName": "Zac",
+          "lastName": "Knoebel",
+          "username": "zknoebel",
+          "bio": "UH Student with a car",
+          "picture": "/images/stock-face.jpeg",
+          "location": "Manoa",
+          "vehicle": "Toyota",
+          "capacity": 3,
+          "vehiclePicture": "/images/davesBuickRegal.jpeg"
+        },
+        {
           "firstName": "Han",
           "lastName": "Zoe",
           "username": "hanzo",

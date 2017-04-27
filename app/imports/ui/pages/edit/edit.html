@@ -1,66 +1,53 @@
 <template name="Edit_Page">
 
+  {{#if Template.subscriptionsReady}}
 
-    <form class="ui equal width form profile-data-form {{ successClass }} {{ errorClass }}">
-      <div class="ui three column centered grid container">
+  <form class="ui equal width form edit-data-form {{ successClass }} {{ errorClass }}">
+    <div class="ui three column centered grid container">
 
       <div class="column">
         <div class="fields">
-          {{> Text_Form_Control label="First" placeholder="first" value=profile.firstName}}
-          {{> Text_Form_Control label="Last" placeholder="last" value=profile.lastName}}
+          {{> Text_Form_Control label="First" placeholder="first" value=profile.firstName errorMessage=(fieldError
+          "firstName")}}
+          {{> Text_Form_Control label="Last" placeholder="last" value=profile.lastName errorMessage=(fieldError
+          "lastName")}}
 
         </div>
 
-        <img class="ui small centered circular image" src="/images/blank-face.jpg"/>
+        <img class="ui small centered circular image" src="{{profile.picture}}"/>
 
-        <div class="field">
-          {{> Text_Form_Control label="Picture" placeholder="http://foo.com/shot.jpg" value=profile.picture
-          }}
-        </div>
+        {{> Text_Form_Control label="Picture" placeholder=userPicture value=profile.picture }}
 
-        {{> TextArea_Form_Control label="About" value=profile.bio placeholder="Something about yourself..."
+      </div>
+
+      <div class="column">
+        <img class="ui bordered image" src="{{profile.vehiclePicture}}"/>
+        {{> Text_Form_Control label="VehiclePicture" placeholder="http://cars.com/vehicle_shot.jpg"
+        value=profile.vehiclePicture}}
+      </div>
+
+      <div class="column">
+
+        {{> Text_Form_Control label="Vehicle" placeholder="vehicle" value=profile.vehicle}}
+
+        {{> Select_Form_Control label="Capacity" value=profile.capacity
+        options=capacities}}
+
+        {{> Select_Form_Control label="Location" value=profile.location options=places}}
+
+        {{> TextArea_Form_Control label="Bio" value=profile.bio placeholder="Something about yourself..."
         }}
 
       </div>
 
-      <div class="column">
-        <div class="field">
-          <img class="ui bordered image" src="/images/car-icon.png"/>
-          {{> Text_Form_Control label="VehiclePicture" placeholder="http://foo.com/vehicle_shot.jpg"
-          value=profile.vehiclePicture}}
-        </div>
-      </div>
-
-      <div class="column">
-        <div class="field">
-          {{> Text_Form_Control label="Vehicle" placeholder="vehicle" value=profile.vehicle}}
-          {{> Select_Form_Control label="Capacity" placeholder="vehicle capacity" value=profile.capacity options=capacities}}
-        </div>
-
-        <div class="field">
-          {{> Select_Form_Control label="Location" placeholder="your location" value=profile.location options=places}}
-        </div>
-      </div>
-
-      <button class="ui primary button" type="submit">Submit</button>
+      <button class="ui primary button" type="submit">Submit Changes</button>
       {{#if displaySuccessMessage}}
       <div class="ui success message">
         <p>Profile data successfully updated.</p>
       </div>
       {{/if}}
-      </div>
-    </form>
+    </div>
+  </form>
 
-
-  <script>
-    $('.ui.selection.dropdown')
-        .dropdown()
-    ;
-  </script>
-  <script>
-    $('ui.dropdown.selection')
-        .dropdown()
-    ;
-  </script>
-
+  {{/if}}
 </template>

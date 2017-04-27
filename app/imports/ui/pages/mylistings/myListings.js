@@ -19,49 +19,95 @@ Template.MyListings_Page.helpers({
       let user = Meteor.user().profile.name;
       return AllListings.find({username: user});
   },
+    saveMe() {
+        return [ { label: "Aiea", value: "0" },
+            { label: "Ewa Beach", value: "1" },
+            { label: "Hale'iwa", value: "2" },
+            { label: "Hau'ula", value: "3" },
+            { label: "Hawaii Kai", value: "4" },
+            { label: "Honolulu", value: "5" },
+            { label: "Ka'a'awa", value: "6" },
+            { label: "Kahala", value: "7" },
+            { label: "Kahuku", value: "8" },
+            { label: "Kailua", value: "9" },
+            { label: "Kane'ohe", value: "10" },
+            { label: "Kapolei", value: "11" }];
+    },
+    selectDay() {
+      return [ { label: "Sunday", value: "0" },
+          { label: "Monday", value: "1" },
+          { label: "Tuesday", value: "2" },
+          { label: "Wednesday", value: "3" },
+          { label: "Thursday", value: "4" },
+          { label: "Friday", value: "5" },
+          { label: "Saturday", value: "6" }];
+    },
+    selectTime() {
+      return [ { label: "18:00", value: "15" },
+          { label: "04:00", value: "1" },
+          { label: "05:00", value: "2" },
+          { label: "06:00", value: "3" },
+          { label: "07:00", value: "4" },
+          { label: "08:00", value: "5" },
+          { label: "09:00", value: "6" },
+          { label: "10:00", value: "7" },
+          { label: "11:00", value: "8" },
+          { label: "12:00", value: "9" },
+          { label: "13:00", value: "10" },
+          { label: "14:00", value: "11" },
+          { label: "15:00", value: "12" },
+          { label: "16:00", value: "13" },
+          { label: "17:00", value: "14" }];
+    },
+    routeUserName() {
+        return FlowRouter.getParam('username');
+    },
 });
 
 Template.MyListings_Page.events({
-    'click .delete'(event, instance) {
-        event.preventDefault();
+    "click [data-action='task/delete']"(event, i) {
+        // delete the task
+        const id = $(event.target).attr("href");
         if(confirm("Do you really want to delete this entry?")) {
-            AllListings.remove(FlowRouter.getParam('_id'));
-            instance.messageFlags.set(displayErrorMessages, false);
-            //FlowRouter.go('MyListings_Page');
+            console.log(id);
+            AllListings.remove(id);
         }
     },
     'submit .list-data-form'(event, instance) {
         event.preventDefault();
-        /*username: { type: String },
-         locationFrom: {type: String},
-         locationTo: {type: String},
-         day: {type: String},
-         startTime: {type: Date},
-         endTime: {type: Date},
-         statusIndicator: {type: String},*/
-        // Get name (text field)
-        let user = Meteor.user().profile.name;
-        const locFrom = event.target.locationFrom.value;
-        const locTo = event.target.locationTo.value;
-        const day = event.target.day.value;
-        const startTime = event.target.startTime.value;
-        const endTime = event.target.endTime.value;
-        const indi = AllListings.findOne({username: user}).statusIndicator;
-
-        const updatedListData = { locFrom, locTo, day, startTime, endTime, indi };
-        // Clear out any old validation errors.
-        instance.context.resetValidation();
-        // Invoke clean so that newStudentData reflects what will be inserted.
-        AllListingsCollection.clean(updatedListData);
-        // Determine validity.
-        instance.context.validate(updatedListData);
-        if (instance.context.isValid()) {
-            AllListings.update(user, { $set: updatedListData });
-            instance.messageFlags.set(displayErrorMessages, false);
-            alert("gg");
-            FlowRouter.go('MyListings_Page');
-        } else {
-            instance.messageFlags.set(displayErrorMessages, true);
+        const username = Meteor.user().profile.name;
+        for(let i = 0; i<event.target.locationFrom.length; i++) {
+            const id = $(event.target.locationFrom[i]).attr("href");
+            console.log(id);
+            const locationFrom = event.target.locationFrom[i].value;
+            const locationTo = event.target.locationTo[i].value;
+            const day = event.target.day[i].value;
+            const startTime = event.target.startTime[i].value;
+            const endTime = event.target.endTime[i].value;
+            const statusIndicator = AllListings.findOne({_id: id}).statusIndicator;
+            console.log(event.target.locationFrom);
+            const updatedListData = { username, locationFrom, locationTo, day, startTime, endTime, statusIndicator };
+            console.log(updatedListData);
+            // Clear out any old validation errors.
+            instance.context.resetValidation();
+            // Invoke clean so that newStudentData reflects what will be inserted.
+            AllListingsCollection.clean(updatedListData);
+            // Determine validity.
+            instance.context.validate(updatedListData);
+            if (instance.context.isValid()) {
+                AllListings.update({_id: id}, { $set: updatedListData }, function(error, affectedDocs) {
+                    if (error) {
+                        throw new Meteor.Error(500, error.message);
+                    } else {
+                        return "Update Successful";
+                    }
+                });
+                console.log(AllListings.findOne({_id: id}));
+                instance.messageFlags.set(displayErrorMessages, false);
+            } else {
+                instance.messageFlags.set(displayErrorMessages, true);
+                alert("error");
+            }
         }
     },
     'click .add'(event, instance) {
@@ -86,8 +132,6 @@ Template.MyListings_Page.events({
         if (instance.context.isValid()) {
             AllListings.insert(updatedListData);
             instance.messageFlags.set(displayErrorMessages, false);
-            //alert("test");
-            //FlowRouter.go('');
         } else {
             instance.messageFlags.set(displayErrorMessages, true);
             alert("error");

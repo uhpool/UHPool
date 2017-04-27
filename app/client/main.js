@@ -17,5 +17,6 @@ import '/imports/ui/pages/edit';
 import '/imports/ui/stylesheets/style.css';
 import '/imports/api/base';
 import '/imports/api/profile';
+import '/imports/api/all_listings';
 import '/imports/api/interest';
 import '/imports/api/user_accepted_listings';

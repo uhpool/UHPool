@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Profiles } from '/imports/api/profile/ProfileCollection';
 import { Interests } from '/imports/api/interest/InterestCollection';
+import { AllListings } from '/imports/api/all_listings/AllListingsCollection';
 import { _ } from 'meteor/underscore';
 
 /* global Assets */
@@ -41,4 +42,23 @@ Meteor.startup(() => {
       restoreCollection(collection, restoreJSON);
     });
   }
+
+    const username = "test";
+    const locationFrom = "0";
+    const locationTo = "0";
+    const day = "0";
+    const startTime = "0";
+    const endTime = "0";
+    const statusIndicator = "0";
+
+    const updatedListData = { username, locationFrom, locationTo, day, startTime, endTime, statusIndicator };
+
+    if (AllListings.find().count() === 0) {
+        AllListings.insert(updatedListData);
+        console.log("here");
+    }
+    if(AllListings.find().count()===0) {
+      console.log("here2");
+    }
+    console.log(AllListings.find().fetch());
 });

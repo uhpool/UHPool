@@ -1,195 +1,120 @@
 <template name="MyListings_Page">
-  <div class="ui container">
-    <table class="ui celled padded table">
-      <thead>
-      <tr><th class="single line">Location</th>
-        <th>Day</th>
-        <th>Start Time</th>
-        <th>End Time</th>
-        <th>Delete</th>
-      </tr></thead>
-      <tbody>
-      <tr>
-          <td>
-              <div class="ui selection dropdown">
-                  <input name="gender" type="hidden">
-                  <i class="dropdown icon"></i>
-                  <div class="default text">Select Location</div>
-                  <div class="menu">
-                      <div class="item" data-value="0">Aiea</div>
-                      <div class="item" data-value="1">Ewa Beach</div>
-                      <div class="item" data-value="2">Hale'iwa</div>
-                      <div class="item" data-value="3">Hau'ula</div>
-                      <div class="item" data-value="4">Hawaii Kai</div>
-                      <div class="item" data-value="5">Honolulu</div>
-                      <div class="item" data-value="6">Ka'a'awa</div>
-                      <div class="item" data-value="7">Kahala</div>
-                      <div class="item" data-value="8">Kahuku</div>
-                      <div class="item" data-value="9">Kailua</div>
-                      <div class="item" data-value="10">Kane'ohe</div>
-                      <div class="item" data-value="11">Kapolei</div>
-                  </div>
-              </div>
-          </td>
-          <td>
-              <div class="ui selection dropdown">
-                  <input name="gender" type="hidden">
-                  <i class="dropdown icon"></i>
-                  <div class="default text">Select Day</div>
-                  <div class="menu">
-                      <div class="item" data-value="6">Sunday</div>
-                      <div class="item" data-value="5">Monday</div>
-                      <div class="item" data-value="4">Tuesday</div>
-                      <div class="item" data-value="3">Wednesday</div>
-                      <div class="item" data-value="2">Thursday</div>
-                      <div class="item" data-value="1">Friday</div>
-                      <div class="item" data-value="0">Saturday</div>
-                  </div>
-              </div>
-          </td>
-          <td>
-              <div class="ui selection dropdown">
-                  <input name="gender" type="hidden">
-                  <i class="dropdown icon"></i>
-                  <div class="default text">Select Start Time</div>
-                  <div class="menu">
-                      <div class="item" data-value="0">04:00</div>
-                      <div class="item" data-value="1">05:00</div>
-                      <div class="item" data-value="1">06:00</div>
-                      <div class="item" data-value="1">07:00</div>
-                      <div class="item" data-value="1">08:00</div>
-                      <div class="item" data-value="1">09:00</div>
-                      <div class="item" data-value="1">10:00</div>
-                      <div class="item" data-value="1">11:00</div>
-                      <div class="item" data-value="1">12:00</div>
-                      <div class="item" data-value="1">13:00</div>
-                      <div class="item" data-value="1">14:00</div>
-                      <div class="item" data-value="1">15:00</div>
-                      <div class="item" data-value="1">16:00</div>
-                      <div class="item" data-value="1">17:00</div>
-                      <div class="item" data-value="1">18:00</div>
-                  </div>
-              </div>
-          </td>
-          <td>
-              <div class="ui selection dropdown">
-                  <input name="gender" type="hidden">
-                  <i class="dropdown icon"></i>
-                  <div class="default text">Select End Time</div>
-                  <div class="menu">
-                      <div class="item" data-value="0">04:00</div>
-                      <div class="item" data-value="1">05:00</div>
-                      <div class="item" data-value="1">06:00</div>
-                      <div class="item" data-value="1">07:00</div>
-                      <div class="item" data-value="1">08:00</div>
-                      <div class="item" data-value="1">09:00</div>
-                      <div class="item" data-value="1">10:00</div>
-                      <div class="item" data-value="1">11:00</div>
-                      <div class="item" data-value="1">12:00</div>
-                      <div class="item" data-value="1">13:00</div>
-                      <div class="item" data-value="1">14:00</div>
-                      <div class="item" data-value="1">15:00</div>
-                      <div class="item" data-value="1">16:00</div>
-                      <div class="item" data-value="1">17:00</div>
-                      <div class="item" data-value="1">18:00</div>
-                  </div>
-              </div>
-          </td>
-          <td>
-              <button class="ui inverted red button">Delete</button>
-          </td>
-      </tr>
-      <tr>
-          <td>
-              <div class="ui selection dropdown">
-                  <input name="gender" type="hidden">
-                  <i class="dropdown icon"></i>
-                  <div class="default text">Select Location</div>
-                  <div class="menu">
-                      <div class="item" data-value="0">Aiea</div>
-                      <div class="item" data-value="1">Ewa Beach</div>
-                      <div class="item" data-value="2">Hale'iwa</div>
-                      <div class="item" data-value="3">Hau'ula</div>
-                      <div class="item" data-value="4">Hawaii Kai</div>
-                      <div class="item" data-value="5">Honolulu</div>
-                      <div class="item" data-value="6">Ka'a'awa</div>
-                      <div class="item" data-value="7">Kahala</div>
-                      <div class="item" data-value="8">Kahuku</div>
-                      <div class="item" data-value="9">Kailua</div>
-                      <div class="item" data-value="10">Kane'ohe</div>
-                      <div class="item" data-value="11">Kapolei</div>
-                  </div>
-              </div>
-          </td>
-          <td>
-              <div class="ui selection dropdown">
-                  <input name="gender" type="hidden">
-                  <i class="dropdown icon"></i>
-                  <div class="default text">Select Day</div>
-                  <div class="menu">
-                      <div class="item" data-value="6">Sunday</div>
-                      <div class="item" data-value="5">Monday</div>
-                      <div class="item" data-value="4">Tuesday</div>
-                      <div class="item" data-value="3">Wednesday</div>
-                      <div class="item" data-value="2">Thursday</div>
-                      <div class="item" data-value="1">Friday</div>
-                      <div class="item" data-value="0">Saturday</div>
-                  </div>
-              </div>
-          </td>
-          <td>
-              <div class="ui selection dropdown">
-                  <input name="gender" type="hidden">
-                  <i class="dropdown icon"></i>
-                  <div class="default text">Select Start Time</div>
-                  <div class="menu">
-                      <div class="item" data-value="0">04:00</div>
-                      <div class="item" data-value="1">05:00</div>
-                      <div class="item" data-value="1">06:00</div>
-                      <div class="item" data-value="1">07:00</div>
-                      <div class="item" data-value="1">08:00</div>
-                      <div class="item" data-value="1">09:00</div>
-                      <div class="item" data-value="1">10:00</div>
-                      <div class="item" data-value="1">11:00</div>
-                      <div class="item" data-value="1">12:00</div>
-                      <div class="item" data-value="1">13:00</div>
-                      <div class="item" data-value="1">14:00</div>
-                      <div class="item" data-value="1">15:00</div>
-                      <div class="item" data-value="1">16:00</div>
-                      <div class="item" data-value="1">17:00</div>
-                      <div class="item" data-value="1">18:00</div>
-                  </div>
-              </div>
-          </td>
-          <td>
-              <div class="ui selection dropdown">
-                  <input name="gender" type="hidden">
-                  <i class="dropdown icon"></i>
-                  <div class="default text">Select End Time</div>
-                  <div class="menu">
-                      <div class="item" data-value="0">04:00</div>
-                      <div class="item" data-value="1">05:00</div>
-                      <div class="item" data-value="1">06:00</div>
-                      <div class="item" data-value="1">07:00</div>
-                      <div class="item" data-value="1">08:00</div>
-                      <div class="item" data-value="1">09:00</div>
-                      <div class="item" data-value="1">10:00</div>
-                      <div class="item" data-value="1">11:00</div>
-                      <div class="item" data-value="1">12:00</div>
-                      <div class="item" data-value="1">13:00</div>
-                      <div class="item" data-value="1">14:00</div>
-                      <div class="item" data-value="1">15:00</div>
-                      <div class="item" data-value="1">16:00</div>
-                      <div class="item" data-value="1">17:00</div>
-                      <div class="item" data-value="1">18:00</div>
-                  </div>
-              </div>
-          </td>
-          <td>
-              <button class="ui inverted red button">Delete</button>
-          </td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
+    {{#if Template.subscriptionsReady}}
+    <form class="ui form list-data-form {{ successClass }} {{ errorClass }}">
+        <div class="ui container">
+            <table class="ui celled padded table">
+                <thead>
+                <tr>
+                    <th class="single line">Location (From)</th>
+                    <th class="single line">Location (To)</th>
+                    <th>Day</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{ #each i in userListings }}
+                <tr>
+                    <td>
+                        {{ >Select_Form_Control label="Location (From)" name="locationFrom" value="i.locationFrom"
+                            placeholder="Select Location" required="true" multiple="false"
+                                options=[ { label: "Aiea", value: "0" },
+                                { label: "Ewa Beach", value: "1" },
+                                { label: "Hale'iwa", value: "2" },
+                                { label: "Hau'ula", value: "3" },
+                                { label: "Hawaii Kai", value: "4" },
+                                { label: "Honolulu", value: "5" },
+                                { label: "Ka'a'awa", value: "6" },
+                                { label: "Kahala", value: "7" },
+                                { label: "Kahuku", value: "8" },
+                                { label: "Kailua", value: "9" },
+                                { label: "Kane'ohe", value: "10" },
+                                { label: "Kapolei", value: "11" }] }}
+                    </td>
+                    <td>
+                        {{ >Select_Form_Control label="Location (To)" name="locationTo" value="i.locationTo"
+                            placeholder="Select Location" required="true" multiple="false"
+                                options=[ { label: "Aiea", value: "0" },
+                                { label: "Ewa Beach", value: "1" },
+                                { label: "Hale'iwa", value: "2" },
+                                { label: "Hau'ula", value: "3" },
+                                { label: "Hawaii Kai", value: "4" },
+                                { label: "Honolulu", value: "5" },
+                                { label: "Ka'a'awa", value: "6" },
+                                { label: "Kahala", value: "7" },
+                                { label: "Kahuku", value: "8" },
+                                { label: "Kailua", value: "9" },
+                                { label: "Kane'ohe", value: "10" },
+                                { label: "Kapolei", value: "11" }] }}
+                    </td>
+                    <td>
+                        {{ >Select_Form_Control label="Day" name="day" value="i.day"
+                            placeholder="Select Day" required="true" multiple="false"
+                                options=[ { label: "Sunday", value: "0" },
+                                { label: "Monday", value: "1" },
+                                { label: "Tuesday", value: "2" },
+                                { label: "Wednesday", value: "3" },
+                                { label: "Thursday", value: "4" },
+                                { label: "Friday", value: "5" },
+                                { label: "Saturday", value: "6" }] }}
+                    </td>
+                    <td>
+                        {{ >Select_Form_Control label="Start Time" name="startTime" value="i.startTime"
+                            placeholder="Select Time" required="true" multiple="false"
+                                options=[ { label: "18:00", value: "15" },
+                                { label: "04:00", value: "1" },
+                                { label: "05:00", value: "2" },
+                                { label: "06:00", value: "3" },
+                                { label: "07:00", value: "4" },
+                                { label: "08:00", value: "5" },
+                                { label: "09:00", value: "6" },
+                                { label: "10:00", value: "7" },
+                                { label: "11:00", value: "8" },
+                                { label: "12:00", value: "9" },
+                                { label: "13:00", value: "10" },
+                                { label: "14:00", value: "11" },
+                                { label: "15:00", value: "12" },
+                                { label: "16:00", value: "13" },
+                                { label: "17:00", value: "14" }] }}
+                    </td>
+                    <td>
+                        {{ >Select_Form_Control label="End Time" name="endTime" value="i.endTime"
+                            placeholder="Select Time" required="true" multiple="false"
+                                options=[ { label: "18:00", value: "15" },
+                                { label: "04:00", value: "1" },
+                                { label: "05:00", value: "2" },
+                                { label: "06:00", value: "3" },
+                                { label: "07:00", value: "4" },
+                                { label: "08:00", value: "5" },
+                                { label: "09:00", value: "6" },
+                                { label: "10:00", value: "7" },
+                                { label: "11:00", value: "8" },
+                                { label: "12:00", value: "9" },
+                                { label: "13:00", value: "10" },
+                                { label: "14:00", value: "11" },
+                                { label: "15:00", value: "12" },
+                                { label: "16:00", value: "13" },
+                                { label: "17:00", value: "14" }] }}
+                    </td>
+                    <td>
+                        <a class="ui inverted red button delete"
+                           href="{{pathFor 'MyListings_Page' username=routeUserName _id=i._id}}">Delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div class="ui container" style="margin-top: 10px">
+            <div class="single line">
+                <button class="ui inverted green button add" type="click">Add</button>
+                <button class="ui green button" type="submit">Save/Update</button>
+            </div>
+        </div>
+        <script>
+            $('.ui.selection.dropdown').dropdown();
+        </script>
+    </form>
+    {{/if}}
 </template>

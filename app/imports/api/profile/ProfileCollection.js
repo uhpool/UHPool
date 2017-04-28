@@ -39,7 +39,7 @@ class ProfileCollection extends BaseCollection {
    *                   location: 'Kailua',
    *                   vehicle: 'Buick'
    *                   capacity: 2,
-   *                   vehiclePicture: 'http://1.bp.blogspot.com/-M2dpTAqyRZU/TpBMhqL9B1I/AAAAAAAAAWM/LI7JR_c9r50/s1600/car+spy+photos+6.jpg',
+   *                   vehiclePicture: 'http://somecar.jpg',
    * @param { Object } description Object with required key username.
    * Username must be unique for all users. It should be the UH email account.
    * @throws { Meteor.Error } If a user with the supplied username already exists, or
@@ -74,17 +74,17 @@ class ProfileCollection extends BaseCollection {
    * @returns { Object } An object representing the definition of docID.
    */
   dumpOne(docID) {
-      const doc = this.findDoc(docID);
-      const firstName = doc.firstName;
-      const lastName = doc.lastName;
-      const username = doc.username;
-      const bio = doc.bio;
-      const picture = doc.picture;
-      const location = doc.location;
-      const vehicle = doc.vehicle;
-      const capacity = doc.capacity;
-      const vehiclePicture = doc.vehiclePicture;
-      return { firstName, lastName, username, bio, picture, location, vehicle, capacity, vehiclePicture };
+    const doc = this.findDoc(docID);
+    const firstName = doc.firstName;
+    const lastName = doc.lastName;
+    const username = doc.username;
+    const bio = doc.bio;
+    const picture = doc.picture;
+    const location = doc.location;
+    const vehicle = doc.vehicle;
+    const capacity = doc.capacity;
+    const vehiclePicture = doc.vehiclePicture;
+    return { firstName, lastName, username, bio, picture, location, vehicle, capacity, vehiclePicture };
   }
 }
 

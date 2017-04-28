@@ -94,10 +94,8 @@ Template.Edit_Page.events({
     const picture = event.target.Picture.value;
     const bio = event.target.Bio.value;
     const location = event.target.Location.value;
-    // const location = _.filter(event.target.Location.selectedOptions, (option) => option.selected)[0];
     const vehicle = event.target.Vehicle.value;
     const capacity = event.target.Capacity.value;
-    // const capacity = _.filter(event.target.Capacity.selectedOptions, (option) => option.selected)[0];
     const vehiclePicture = event.target.VehiclePicture;
 
     const updatedProfileData = { firstName, lastName, picture, bio, username, location, vehicle, capacity,

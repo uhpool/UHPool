@@ -1,6 +1,5 @@
 import { Meteor } from 'meteor/meteor';
 import { Profiles } from '/imports/api/profile/ProfileCollection';
-import { Interests } from '/imports/api/interest/InterestCollection';
 import { AllListings } from '/imports/api/all_listings/AllListingsCollection';
 import { UserAcceptedListings } from '/imports/api/user_accepted_listings/UserAcceptedListingsCollection';
 import { _ } from 'meteor/underscore';
@@ -31,7 +30,7 @@ function restoreCollection(collection, restoreJSON) {
 
 Meteor.startup(() => {
   /** Only initialize database if it's empty. */
-  const collectionList = [Interests, Profiles];
+  const collectionList = [Profiles];
   const totalDocuments = _.reduce(collectionList, function reducer(memo, collection) {
     return memo + collection.count();
   }, 0);
@@ -44,27 +43,27 @@ Meteor.startup(() => {
     });
   }
 
-    const username = "test";
-    const locationFrom = "0";
-    const locationTo = "0";
-    const day = "0";
-    const startTime = "0";
-    const endTime = "0";
-    const statusIndicator = "0";
+  const username = 'test';
+  const locationFrom = '0';
+  const locationTo = '0';
+  const day = '0';
+  const startTime = '0';
+  const endTime = '0';
+  const statusIndicator = '0';
 
-    const updatedListData = { username, locationFrom, locationTo, day, startTime, endTime, statusIndicator };
+  const updatedListData = { username, locationFrom, locationTo, day, startTime, endTime, statusIndicator };
 
-    if (AllListings.find().count() === 0) {
-        AllListings.insert(updatedListData);
-    }
+  if (AllListings.find().count() === 0) {
+    AllListings.insert(updatedListData);
+  }
 
-    if(UserAcceptedListings.find().count() === 0) {
-        const usernameDriver = 'testDriver';
-        const usernamePotentialPassenger = 'testPassenger';
+  if (UserAcceptedListings.find().count() === 0) {
+    const usernameDriver = 'testDriver';
+    const usernamePotentialPassenger = 'testPassenger';
 
-        const ual = { usernameDriver, usernamePotentialPassenger };
+    const ual = { usernameDriver, usernamePotentialPassenger };
 
-        UserAcceptedListings.insert(ual);
-    }
-    console.log(UserAcceptedListings.find().fetch());
+    UserAcceptedListings.insert(ual);
+  }
+  console.log(UserAcceptedListings.find().fetch());
 });

@@ -7,10 +7,8 @@
 
       <div class="column">
         <div class="fields">
-          {{> Text_Form_Control label="First" placeholder="first" value=profile.firstName errorMessage=(fieldError
-          "firstName")}}
-          {{> Text_Form_Control label="Last" placeholder="last" value=profile.lastName errorMessage=(fieldError
-          "lastName")}}
+          {{> Text_Form_Control label="First" placeholder="first" value=profile.firstName }}
+          {{> Text_Form_Control label="Last" placeholder="last" value=profile.lastName }}
 
         </div>
 
@@ -30,12 +28,11 @@
 
         {{> Text_Form_Control label="Vehicle" placeholder="vehicle" value=profile.vehicle}}
 
-        {{ >Dropdown_Form_Control label="Capacity" value=profile.capacity options=capacities }}
+        {{ >Dropdown_Form_Control label="Capacity" options=capacities value=profile.capacity }}
 
-        {{ >Dropdown_Form_Control label="Location" value=profile.location options=places }}
+        {{ >Dropdown_Form_Control label="Location" options=places value=profile.location}}
 
-        {{> TextArea_Form_Control label="Bio" value=profile.bio placeholder="Something about yourself..."
-        }}
+        {{> TextArea_Form_Control label="Bio"  placeholder="Something about yourself..." value=profile.bio }}
 
       </div>
 

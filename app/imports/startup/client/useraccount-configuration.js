@@ -12,7 +12,8 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
  */
 Accounts.onLogin(function onLogin() {
   const id = Meteor.userId();
-  const onLoginPage = FlowRouter.current().path && (FlowRouter.current().path === '/login');
+  const onLoginPage = FlowRouter.current().path && (FlowRouter.current().path === '/login'
+     || FlowRouter.current().path === '/');
   const initialLogin = (id && onLoginPage);
 
   if (initialLogin) {

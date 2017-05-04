@@ -9,7 +9,7 @@
           <h3 class="landing-section-1-tagline">Quick and easy access to find carpoolers in the UH community</h3>
           <h3></h3>
           <div class="ui center aligned sixteen wide column">
-            {{> Cas_Login }}
+            <a class="ui primary button {{isActiveRoute "Login_Page"}} item" href="{{pathFor "Login_Page"}}">login</a>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@
   <div class="landing-section-5">
     <div class="ui grid">
       <div class="ui center aligned sixteen wide column">
-        {{> Cas_Login size="large"}}
+          <a class="ui primary large button {{isActiveRoute "Login_Page"}} item" href="{{pathFor "Login_Page"}}">login</a>
       </div>
     </div>
   </div>

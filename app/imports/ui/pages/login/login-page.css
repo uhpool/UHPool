@@ -1,23 +1,18 @@
 .background-1 {
   padding: 150px 10px 150px 30px;
-  background: url(../images/traffic.jpg) no-repeat center;
+  background: url(../images/login_background.png) no-repeat center;
   color: black;
-}
-
-.landing-section-2 {
-  padding: 20px 10px 30px 10px;
-  background-color: #FFFFFF;
-  color:  black;
 }
 
 .landing-section-5 {
   padding: 20px 10px 20px 10px;
+  height: 6em;
   background-color: darkgreen;
   color: #FFFFFF;
 }
 
 
-.landing-section-1-welcome {
+.login-section-1-welcome {
   font-family: 'Lato', sans-serif;
   font-weight: 900;
   font-size: 72px;

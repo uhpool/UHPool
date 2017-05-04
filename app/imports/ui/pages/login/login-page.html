@@ -1,15 +1,16 @@
 <template name="Login_Page">
 
+  <div class="landing-section-5"></div>
+
   <div class="background-1">
     <div class="ui grid">
 
       <div class="row">
         <div class="ui huge center aligned sixteen wide column">
-          <h1 class="landing-section-1-welcome">Welcome to UHPool</h1>
+          <h1 class="login-section-1-welcome">Sign In to UHPool</h1>
           <h3 class="landing-section-1-tagline">Quick and easy access to find carpoolers in the UH community</h3>
-          <h3></h3>
           <div class="ui center aligned sixteen wide column">
-            {{> Cas_Login }}
+            {{> Cas_Login size="large"}}
           </div>
         </div>
       </div>
@@ -21,63 +22,22 @@
     <div class="ui equal width stackable internally celled grid">
       <div class="center aligned row">
         <div class="column">
-          <h2>Why should I carpool?</h2>
-          <h4>1. Carpooling saves gas, money and time.</h4>
-          <h4>2. Parking permits can be hard to get and carpool permits are always available.</h4>
+          <h2>This service is meant for UH students and staff only</h2>
+          <h4>1. Meet other members for the first time in a public place.</h4>
+          <h4>2. Don't be late. Others are counting on you.</h4>
+          <h4>3. Save money and make new friends.</h4>
         </div>
         <div class="column">
-          <h2>Why should I use this app?</h2>
-          <h4>1. The current way to find someone to carpool with difficult.</h4>
-          <h4>2. College life is busy and not everyone can match your schedule but there's always someone available.</h4>
+          <h2>How to use this app?</h2>
+          <h4>1. Sign in.</h4>
+          <h4>2. Fill out your profile information.</h4>
+          <h4>3. Find user listings that match you schedule, make your own listings or both</h4>
+          <h4>4. Contact other users to set up your carpool.</h4>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="landing-section-2">
-    <div class="ui grid">
-      <div class="ui center aligned column">
-
-        <div class="ui two column grid">
-
-          <div class="column">
-            <div class="ui fluid card">
-              <div class="ui slide masked reveal image">
-                <img src="/images/profile.png" class="visible content">
-                <img src="/images/edit.png" class="hidden content">
-              </div>
-              <div class="content">
-                <h3 class="header">Setup a Profile</h3>
-                <h3 class="header">Quickly setup your profile</h3>
-              </div>
-            </div>
-          </div>
-
-          <div class="column">
-            <div class="ui fluid card">
-              <div class="ui slide masked reveal image">
-                <img src="/images/mylistings.png" class="visible content">
-                <img src="/images/listings.png" class="hidden content">
-              </div>
-              <div class="content">
-                <h3 class="header">Put your listing for others to find you</h3>
-                <h3 class="header">Find others compatiable with you</h3>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="landing-section-5">
-    <div class="ui grid">
-      <div class="ui center aligned sixteen wide column">
-        {{> Cas_Login size="large"}}
-      </div>
-    </div>
-  </div>
+  <div class="landing-section-5"></div>
 
 </template>

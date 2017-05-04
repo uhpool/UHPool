@@ -26,6 +26,6 @@ Template.If_Authorized.helpers({
     // Check that the current user is accessing a page in their area.
     const routeUserName = FlowRouter.getParam('username');
     const loggedInUserName = Meteor.user().profile.name;
-    return (routeUserName === loggedInUserName);
+    return (routeUserName === loggedInUserName || FlowRouter.current().path.endsWith('/profile'));
   },
 });

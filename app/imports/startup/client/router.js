@@ -13,6 +13,14 @@ FlowRouter.route('/', {
   },
 });
 
+export const loginPageRouteName = 'Login_Page';
+FlowRouter.route('/login', {
+  name: loginPageRouteName,
+  action() {
+    BlazeLayout.render('Login_Layout', { main: loginPageRouteName });
+  },
+});
+
 /*                        DIRECTORY ROUTE                       */
 
 function addDirectoryBodyClass() {

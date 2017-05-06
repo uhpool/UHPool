@@ -80,6 +80,7 @@ Template.MyListings_Page.events({
         for(let i = 0; i<event.target.locationFrom.length; i++) {
             const id = $(event.target.locationFrom[i]).attr("href");
             console.log(id);
+            const usernameAccepted = event.target.usernameAccepted[i].value;
             const locationFrom = event.target.locationFrom[i].value;
             const locationTo = event.target.locationTo[i].value;
             const day = event.target.day[i].value;
@@ -87,7 +88,8 @@ Template.MyListings_Page.events({
             const endTime = event.target.endTime[i].value;
             const statusIndicator = AllListings.findOne({_id: id}).statusIndicator;
             console.log(event.target.locationFrom);
-            const updatedListData = { username, locationFrom, locationTo, day, startTime, endTime, statusIndicator };
+
+            const updatedListData = { username, usernameAccepted, locationFrom, locationTo, day, startTime, endTime, statusIndicator };
             console.log(updatedListData);
             // Clear out any old validation errors.
             instance.context.resetValidation();
@@ -115,6 +117,7 @@ Template.MyListings_Page.events({
         event.preventDefault();
         // Get name (text field)
         const username = Meteor.user().profile.name;
+        const usernameAccepted = 'None';
         const locationFrom = "0";
         const locationTo = "0";
         const day = "0";
@@ -122,7 +125,7 @@ Template.MyListings_Page.events({
         const endTime = "0";
         const statusIndicator = "0";
 
-        const updatedListData = { username, locationFrom, locationTo, day, startTime, endTime, statusIndicator };
+        const updatedListData = { username, usernameAccepted, locationFrom, locationTo, day, startTime, endTime, statusIndicator };
         // Clear out any old validation errors.
         instance.context.resetValidation();
         // Invoke clean so that newStudentData reflects what will be inserted.
@@ -135,7 +138,7 @@ Template.MyListings_Page.events({
             instance.messageFlags.set(displayErrorMessages, false);
         } else {
             instance.messageFlags.set(displayErrorMessages, true);
-            alert("error");
+            alert("errors");
         }
 
         console.table(AllListings.find({username: Meteor.user().profile.name}).fetch());

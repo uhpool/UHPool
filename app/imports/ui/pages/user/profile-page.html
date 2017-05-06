@@ -18,7 +18,7 @@
         <div class="ui text">{{ profile.vehicle }}</div>
         <h3>Capacity</h3>
         <div class="ui text">{{ profile.capacity }}</div>
-        <a href="{{pathFor "Listings_Page" username=routeUserName}}">View user's listings</a>
+        <a href="{{pathFor 'Listings_Page' username=routeUserName}}">View user's listings</a>
       </div>
 
       <div class="column">
@@ -27,6 +27,37 @@
       </div>
     </div>
 
+  {{#if hasUserWhoAcceptedTheirListing}}
+  <div class="ui centered container">
+    <h1>You have people who are pending your acceptance</h1>
+    <div class="ui centered grid">
+      {{ #each i in userWhoAcceptedTheirListing }}
+      <div class="ui row" style="margin-top: 10px">
+        <div class="ui two wide column">
+          <button class="ui inverted green button toggle" href="{{i.id}}" data-action="task/accept" type="click">
+            Accept
+          </button>
+          <button class="ui inverted green button toggle" href="{{i.id}}" data-action="task/accept" type="click">
+            Deny
+          </button>
+        </div>
+        <div class="ui eight wide #ededed column">
+          <p class="large text">{{i.name}} is offering a ride from {{i.locationFrom}} to {{i.locationTo}}</p>
+        </div>
+        <div class="ui two wide column">
+          <p class="large text">From {{i.startTime}}</p>
+        </div>
+        <div class="ui two wide column">
+          <p class="large text">To {{i.endTime}}</p>
+        </div>
+        <div class="ui two wide column">
+          <p class="large text">On {{i.day}}</p>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
 
   {{/if}}
 </template>

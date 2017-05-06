@@ -107,7 +107,8 @@ Template.Listings_Page.helpers({
         for(let i = 0; i<allThings.length; i++) {
             //if true can continue because we aren't going to show the same user and is part of 'pending'
             if(allThings[i].username != user && allThings[i].statusIndicator == "0") {
-                const one = Profiles.findDoc(FlowRouter.getParam('username'));
+                console.log(allThings[i].usernameAccepted);
+                const one = Profiles.findDoc(allThings[i].username);
                 const locs = [ { label: "Aiea", value: "0" },
                     { label: "Ewa Beach", value: "1" },
                     { label: "Hale'iwa", value: "2" },

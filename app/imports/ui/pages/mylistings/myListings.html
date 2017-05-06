@@ -10,6 +10,7 @@
                     <th>Day</th>
                     <th>Pickup Time</th>
                     <th>Leeway Until...</th>
+                    <th>User Pending Acceptance</th>
                     <th>Delete</th>
                 </tr>
                 </thead>
@@ -38,8 +39,12 @@
                     </td>
                     <td>
                         {{ >Select_Form_Control id=i._id label="To..." name="endTime" value=i.endTime
-                            placeholder="Select Time" required=true multiple=false
-                                options=selectTime }}
+                        placeholder="Select Time" required=true multiple=false
+                        options=selectTime }}
+                    </td>
+                    <td>
+                        {{ >Text_Div_Display id=i._id name="usernameAccepted" value=i.usernameAccepted
+                        placeholder="None" required=false }}
                     </td>
                     <td>
                         <button name="del" class="ui inverted red button delete"

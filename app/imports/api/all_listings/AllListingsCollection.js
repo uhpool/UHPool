@@ -13,6 +13,7 @@ export const AllListings = new Mongo.Collection('AllListingsCollection');
  */
 export const AllListingsCollection = new SimpleSchema({
     username: { type: String },
+    usernameAccepted: { type: String },
     locationFrom: {type: String},
     locationTo: {type: String},
     day: {type: String},

@@ -43,7 +43,8 @@ Meteor.startup(() => {
     });
   }
 
-  const username = 'test';
+  const username = 'quackdynasty';
+  const usernameAccepted = 'testAccepted';
   const locationFrom = '0';
   const locationTo = '0';
   const day = '0';
@@ -51,7 +52,7 @@ Meteor.startup(() => {
   const endTime = '0';
   const statusIndicator = '0';
 
-  const updatedListData = { username, locationFrom, locationTo, day, startTime, endTime, statusIndicator };
+    const updatedListData = { username, usernameAccepted, locationFrom, locationTo, day, startTime, endTime, statusIndicator };
 
   if (AllListings.find().count() === 0) {
     AllListings.insert(updatedListData);

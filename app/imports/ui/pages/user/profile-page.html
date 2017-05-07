@@ -27,9 +27,32 @@
       </div>
     </div>
 
+  <h1></h1>
+  <hr>
+  {{#if userHasAcceptedThePendingOne}}
+  <div class="ui centered container" style="margin-top: 20px;">
+    <h1>Some people have responded to your listings</h1>
+    <div class="ui centered grid">
+      {{ #each i in userWhoHasBeenAccepted }}
+      <div class="ui row" style="margin-top: 10px">
+        <div class="ui two wide column">
+          <button class="ui inverted yellow button toggle" href="{{i.id}}" data-action="task/cancel" type="click">
+            Cancel
+          </button>
+        </div>
+        <div class="ui fourteen wide #ededed column">
+          <p class="large text">You are currently carpooling with {{i.name}} from {{i.locationFrom}} to {{i.locationTo}} from {{i.startTime}} to {{i.endTime}}
+            on {{i.day}}</p>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
+  <h1></h1>
   {{#if hasUserWhoAcceptedTheirListing}}
-  <div class="ui centered container">
-    <h1>You have people who are pending your acceptance</h1>
+  <div class="ui centered container" style="margin-top: 20px;">
+    <h1>Some people have responded to your listings</h1>
     <div class="ui centered grid">
       {{ #each i in userWhoAcceptedTheirListing }}
       <div class="ui row" style="margin-top: 10px">
@@ -37,21 +60,15 @@
           <button class="ui inverted green button toggle" href="{{i.id}}" data-action="task/accept" type="click">
             Accept
           </button>
-          <button class="ui inverted green button toggle" href="{{i.id}}" data-action="task/accept" type="click">
+        </div>
+        <div class="ui two wide column">
+          <button class="ui inverted red button toggle" href="{{i.id}}" data-action="task/deny" type="click">
             Deny
           </button>
         </div>
-        <div class="ui eight wide #ededed column">
-          <p class="large text">{{i.name}} is offering a ride from {{i.locationFrom}} to {{i.locationTo}}</p>
-        </div>
-        <div class="ui two wide column">
-          <p class="large text">From {{i.startTime}}</p>
-        </div>
-        <div class="ui two wide column">
-          <p class="large text">To {{i.endTime}}</p>
-        </div>
-        <div class="ui two wide column">
-          <p class="large text">On {{i.day}}</p>
+        <div class="ui twelve wide #ededed column">
+          <p class="large text">{{i.name}} accepted your ride from {{i.locationFrom}} to {{i.locationTo}} from {{i.startTime}} to {{i.endTime}}
+            on {{i.day}}</p>
         </div>
       </div>
       {{/each}}

@@ -43,21 +43,32 @@ Meteor.startup(() => {
     });
   }
 
-  const username = 'test';
-  const locationFrom = '0';
-  const locationTo = '0';
-  const day = '0';
-  const startTime = '0';
-  const endTime = '0';
-  const statusIndicator = '0';
+    let username = 'quackdynasty';
+    let usernameAccepted = 'testAccepted';
+    let locationFrom = '0';
+    let locationTo = '0';
+    let day = '0';
+    let startTime = '0';
+    let endTime = '0';
+    let statusIndicator = '0';
 
-  const updatedListData = { username, locationFrom, locationTo, day, startTime, endTime, statusIndicator };
-
-  if (AllListings.find().count() === 0) {
+    let updatedListData = { username, usernameAccepted, locationFrom, locationTo, day, startTime, endTime, statusIndicator };
     AllListings.insert(updatedListData);
-  }
 
-  if (UserAcceptedListings.find().count() === 0) {
+    username = 'jsn9';
+    usernameAccepted = 'quackdynasty';
+    locationTo = '0';
+    locationFrom = '1';
+    day = '1';
+    startTime = '3';
+    endTime = '4';
+    statusIndicator = '1';
+
+    updatedListData = { username, usernameAccepted, locationFrom, locationTo, day, startTime, endTime, statusIndicator };
+    AllListings.insert(updatedListData);
+
+
+    if (UserAcceptedListings.find().count() === 0) {
     const usernameDriver = 'testDriver';
     const usernamePotentialPassenger = 'testPassenger';
 

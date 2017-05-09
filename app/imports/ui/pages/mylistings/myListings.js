@@ -136,6 +136,8 @@ Template.MyListings_Page.events({
         if (instance.context.isValid()) {
             AllListings.insert(updatedListData);
             instance.messageFlags.set(displayErrorMessages, false);
+            FlowRouter.go('Profile_Page', {username: FlowRouter.getParam('username')});
+            FlowRouter.go('MyListings_Page', {username: FlowRouter.getParam('username')});
         } else {
             instance.messageFlags.set(displayErrorMessages, true);
             alert("errors");

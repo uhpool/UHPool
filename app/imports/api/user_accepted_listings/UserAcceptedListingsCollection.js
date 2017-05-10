@@ -9,8 +9,8 @@ import { Mongo } from 'meteor/mongo';
 export const UserAcceptedListings = new Mongo.Collection('UserAcceptedListingsCollection');
 
 export const UserAcceptedListingsCollection = new SimpleSchema({
-    usernameDriver: { type: String },
-    usernamePotentialPassenger: {type: String},
+  usernameDriver: { type: String },
+  usernamePotentialPassenger: { type: String },
 });
 
 UserAcceptedListings.attachSchema(UserAcceptedListingsCollection);

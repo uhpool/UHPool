@@ -7,4 +7,3 @@ Template.Login_Page.helpers({
 
 });
 
-

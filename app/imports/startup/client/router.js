@@ -33,12 +33,12 @@ function removeDirectoryBodyClass() {
 
 export const directoryPageRouteName = 'Directory_Page';
 FlowRouter.route('/directory', {
-    name: directoryPageRouteName,
-    action() {
-        BlazeLayout.render('Directory_Layout', { main: directoryPageRouteName });
-    },
-    triggersEnter: [addDirectoryBodyClass],
-    triggersExit: [removeDirectoryBodyClass],
+  name: directoryPageRouteName,
+  action() {
+    BlazeLayout.render('Directory_Layout', { main: directoryPageRouteName });
+  },
+  triggersEnter: [addDirectoryBodyClass],
+  triggersExit: [removeDirectoryBodyClass],
 });
 
 /*                        USER ROUTES                      */
@@ -86,18 +86,18 @@ userRoutes.route('/filter', {
 
 export const myListingsPageRouteName = 'MyListings_Page';
 userRoutes.route('/mylistings', {
-    name: myListingsPageRouteName,
-    action() {
-        BlazeLayout.render('User_Layout', { main: myListingsPageRouteName });
-    },
+  name: myListingsPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: myListingsPageRouteName });
+  },
 });
 
 export const listingsPageRouteName = 'Listings_Page';
 userRoutes.route('/listings', {
-    name: listingsPageRouteName,
-    action() {
-        BlazeLayout.render('User_Layout', { main: listingsPageRouteName });
-    },
+  name: listingsPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: listingsPageRouteName });
+  },
 });
 
 /*                        MISC ROUTES                       */
